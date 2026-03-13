@@ -1,0 +1,19 @@
+label: Feature Article
+icon: article
+description: Featured blog post section with image, title, description, and link.
+value:
+  _component: page-sections/features/feature-article
+  post: ""
+  colorScheme: inherit
+  backgroundColor: base
+preview:
+  text:
+    - Feature Article
+  subtext:
+    - key: post
+  icon: article
+picker_preview:
+  text: Feature Article
+  subtext: Highlights a single blog post with image and summary.
+_inputs_from_glob:
+  - /src/components/page-sections/features/feature-article/feature-article.cloudcannon.inputs.yml
