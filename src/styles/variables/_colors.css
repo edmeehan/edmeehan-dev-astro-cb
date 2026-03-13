@@ -1,4 +1,15 @@
 :where(:root) {
+  /* brand colors */
+  --color-everygreen: #2F4F4E;
+  --color-everygreen-light: #4B6D6C;
+  --color-lime: #E2FEF1;
+  --color-charcoal: #1B1F1F;
+  --color-sand: #FFFEF6;
+  --color-stone: #5B605F;
+  --color-wave: #33A8AE;
+  --color-burnt-orange: #AE5033;
+  --color-pebble: #E2E0D3;
+
   --gray-0: #fff;
   --gray-1: #eaeaea;
   --gray-2: #d4d4d4;

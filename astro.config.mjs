@@ -11,7 +11,7 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://example.com", // TODO: Update to your production URL
+  site: "https://edmeehan.dev", // TODO: Update to your production URL
   build: {
     inlineStylesheets: "always",
   },
