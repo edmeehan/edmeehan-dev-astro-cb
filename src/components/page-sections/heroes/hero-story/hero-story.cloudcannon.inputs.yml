@@ -1,0 +1,74 @@
+eyebrow:
+  type: text
+  comment: Optional label displayed above the hero heading.
+heading:
+  type: text
+  comment: Main heading text for the hero.
+subtext:
+  type: markdown
+  comment: Supporting subtext displayed beneath the heading.
+  options:
+    blockquote: false
+    bold: true
+    format:
+    italic: true
+    link: true
+    strike: false
+    subscript: true
+    superscript: true
+    underline: false
+    bulletedlist: false
+    numberedlist: false
+images:
+  type: object
+images.imageSource_1:
+  type: image
+  comment: Feature image to display alongside the hero content.
+  options:
+    paths:
+      uploads: src/assets/images
+      static: ""
+    resize_style: contain
+    width: 1920
+    height: 1280
+images.imageAlt_1:
+  type: text
+  comment: Alt text for the feature image for accessibility.
+images.imageSource_2:
+  type: image
+  comment: Feature image to display alongside the hero content.
+  options:
+    paths:
+      uploads: src/assets/images
+      static: ""
+    resize_style: contain
+    width: 1920
+    height: 1280
+images.imageAlt_2:
+  type: text
+  comment: Alt text for the feature image for accessibility.
+images.imageSource_3:
+  type: image
+  comment: Feature image to display alongside the hero content.
+  options:
+    paths:
+      uploads: src/assets/images
+      static: ""
+    resize_style: contain
+    width: 1920
+    height: 1280
+images.imageAlt_3:
+  type: text
+  comment: Alt text for the feature image for accessibility.
+buttonSections:
+  type: array
+  comment: Button blocks for calls to action.
+  options:
+    structures: _structures.buttonSections
+backgroundColor:
+  type: select
+  comment: Background color for the hero.
+  options:
+    values:
+      - id: default
+        name: Default

@@ -1,0 +1,36 @@
+label: Hero Story
+icon: hero
+description: Centered hero with heading, supporting text, and buttons.
+value:
+  _component: page-sections/heroes/hero-story
+  eyebrow: Eyebrow text
+  heading: Heading text
+  subtext: Subtext placeholder text that will be replaced with actual content.
+  buttonSections:
+    - _component: building-blocks/core-elements/button
+      text: My Button
+      hideText: false
+      link: ""
+      iconName: ""
+      iconPosition: before
+      variant: primary
+      size: md
+  images:
+    imageSource_1: /src/assets/images/component-docs/dunedin-cliff.jpg
+    imageAlt_1: Hero image
+    imageSource_2: /src/assets/images/component-docs/dunedin-cliff.jpg
+    imageAlt_2: Hero image
+    imageSource_3: /src/assets/images/component-docs/dunedin-cliff.jpg
+    imageAlt_3: Hero image
+  backgroundColor: default
+preview:
+  text:
+    - Hero Story
+  subtext:
+    - key: heading
+  icon: hero
+picker_preview:
+  text: Hero Story
+  subtext: Story hero with images, heading, subtext, and buttons.
+_inputs_from_glob:
+  - /src/components/page-sections/heroes/hero-story/hero-story.cloudcannon.inputs.yml
