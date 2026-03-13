@@ -3,6 +3,27 @@ _schema: default
 title: Astro Component Starter
 description: Build fast, customizable Astro sites with a modern component starter that is easy to edit and maintain.
 pageSections:
+  - _component: page-sections/heroes/hero-story
+    eyebrow: Eyebrow text
+    heading: Heading text
+    subtext: Subtext placeholder text that will be replaced with actual content.
+    buttonSections:
+      - _component: building-blocks/core-elements/button
+        text: My Button
+        hideText: false
+        link: ""
+        iconName: ""
+        iconPosition: before
+        variant: primary
+        size: md
+    images:
+      imageSource_1: /src/assets/images/component-docs/dunedin-cliff.jpg
+      imageAlt_1: Hero image
+      imageSource_2: /src/assets/images/component-docs/dunedin-cliff.jpg
+      imageAlt_2: Hero image
+      imageSource_3: /src/assets/images/component-docs/dunedin-cliff.jpg
+      imageAlt_3: Hero image
+    backgroundColor: default
   - _component: page-sections/heroes/hero-center
     eyebrow:
     heading: The Astro Component Starter for building any site
