@@ -19,11 +19,12 @@ const {
 const allPosts = await getCollection("blog");
 
 // CloudCannon document picker stores the full path; match against post.id (filename only)
-const postId = postPath?.split("/").pop() ?? "";
+const postId = postPath?.split("/")?.pop() ?? "";
 const normalizedPath = postId.replace(/\.(mdx?|ya?ml|json)$/, "");
 const post = allPosts.find((p) => p.id === normalizedPath);
 
 console.log(allPosts)
+console.log(postId, normalizedPath)
 
 const slug = post ? (post.id?.replace(/\.mdx?$/, "") || post.slug) : null;
 const pubDate = post?.data.date.toLocaleDateString("en-US", {
