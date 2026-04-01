@@ -55,4 +55,23 @@ pageSections:
     minItemWidth: 280
     maxItemWidth: 360
     align: center
+  - _component: page-sections/features/full-content-card
+    heading: Inside the SunBum Shopify Build
+    subtext: >-
+      End-to-end Shopify implementation delivering a fast, reliable, and
+      conversion-optimized ecommerce experience at scale.
+    imageSource: /src/assets/images/dunedin-cliff.jpg
+    imageAlt: Project image
+    tags:
+      - label: Shopify
+      - label: Front-End Development
+      - label: Plug-in management
+    reverse: false
+    colorScheme: inherit
+    backgroundColor: accent
+    paddingVertical: 3xl
+  - _component: page-sections/features/feature-article
+    post: /src/content/blog/2025-12-24-content-first-design.mdx
+    colorScheme: inherit
+    backgroundColor: base
 ---
