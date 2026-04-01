@@ -1,0 +1,155 @@
+---
+_schema: blog
+uuid: 847a39ac-02e5-4949-97ca-d3f43ade61bc
+title: Slow Shopify Page Speeds
+headline: Improve Your Shopify Store Performance with Faster Page Loads
+excerpt: >-
+  Boost your Shopify sales by speeding up your store. Faster load times mean
+  happier customers and more sales.
+post_image:
+  src: /uploads/blog/shopify-speed-post.jpg
+  alt: Man on a bicycle at night
+  title: Man on a bicycle at night - Luca Campioni https://unsplash.com/@nexgenfx
+published: 2024-05-01T00:00:00-07:00
+read_time: 3.5
+content_blocks:
+  - _bookshop_name: grid/side-by-side
+    content: >-
+      <h4 class="h2">I'm Ed, and I have helped Shopify stores improve page speed by 300%</h4>
+
+
+      I know finding a reliable freelancer who truly delivers solutions can be
+      daunting, especially after past disappointments. That's why I'm here: to
+      clear the confusion and get your Shopify store on the fast track. With my
+      expertise, let's tackle your site's speed issues effectively. Let’s
+      restore your confidence and your store’s performance.
+    cta:
+      _bookshop_name: global/cta
+      label: Request a consultation
+      link: /consultation-request/
+      style: tertiary
+      size: default
+      new_tab: false
+    image:
+      _bookshop_name: global/image
+      src: /uploads/pages/2024-headshot.png
+      alt: Ed Meehan
+      title: Ed Meehan
+      width: 400
+      height:
+      loading: lazy
+    section:
+      margin_top_desktop: 2
+      margin_bottom_desktop: 2
+      margin_top_mobile: 2
+      margin_bottom_mobile: 2
+      gap_style: curve
+      colors: Default
+      transition_animation: false
+      background_animation: null
+    layout:
+      format: left
+      content_align: center
+      media_align: center
+      media_expand: false
+      is_mini: false
+  - _bookshop_name: testimonial/single
+    testimonial: 4d31cf68-4293-4669-b9d6-c93c6204f564
+    section:
+      margin_top_desktop: 2
+      margin_bottom_desktop: 2
+      margin_top_mobile: 2
+      margin_bottom_mobile: 2
+      gap_style: curve
+      colors: Default
+      transition_animation: true
+      background_animation: null
+seo:
+  no_index: false
+  page_title: Improve Your Shopify Store Performance with Faster Page Loads
+  page_description: >-
+    Boost your Shopify sales by speeding up your store. Faster load times mean
+    happier customers and more sales.
+  featured_image:
+  open_graph_type: article
+  canonical_url:
+hidden: false
+show_share: true
+show_comments: false
+---
+While your rival's store quickly engages customers with its rapid load times, you're left reviewing disappointing speed tests. This isn't just about losing pace—it's impacting your SEO and ROAS.
+
+An outdated Shopify theme can significantly affect your store's page speed performance. Slow store speeds test your customers' patience and reduce conversions, but also affect your site's SEO, potentially costing you visibility in search rankings. The good news? It's fixable.
+
+## Understanding and Measuring Page Speed
+
+Page speed impacts customer satisfaction, SEO, and conversion rates. Using <a href="https://pagespeed.web.dev/" target="_blank" rel="noopener">Google's PageSpeed Insights</a>, we assess key metrics like:
+
+* **FCP** - <a href="https://web.dev/articles/fcp" target="_blank" rel="noopener">First Contentful Paint</a>, which shows how quickly the first content appears.
+* **LCP** - <a href="https://web.dev/articles/lcp" target="_blank" rel="noopener">Largest Contentful Paint</a>, timing the largest visible content.
+* **CLS** - <a href="https://web.dev/articles/cls" target="_blank" rel="noopener">Cumulative Layout Shift</a> evaluates content stability as it loads.
+
+These insights help pinpoint improvements to enhance your Shopify store’s performance.
+
+<SnipImage caption="Screen shot of a less than desirable speed report" src="/uploads/blog/screenshot-2024-04-26-at-1-59-53-pm.png" width={0} height={0} alt="Screen shot of a Google PageSpeed Insights report" jumbo={false} loading="lazy"/>
+
+## First Steps to Faster Shopify Performance
+
+So, what's the best approach? We're zeroing in on LCP and CLS improvements. These areas typically require the least effort for optimization and can dramatically boost your page's overall speed.
+
+**Why ignore FCP?** This metric is closely linked to features that are challenging to optimize quickly. While it's possible to make enhancements that will improve FCP, the effort required is often disproportionate to the benefits gained, making it less efficient as a starting point for optimization.
+
+## How to Detect and Fix CLS Problems on Your Shopify Store
+
+In many Shopify stores, the primary contributors to an increased Cumulative Layout Shift (CLS) are images and Shopify Apps. Images without predefined dimensions can cause layout displacement when they load, and Shopify Apps intensify CLS when they inject new content as their scripts and assets load. These shifts can lead to a jarring experience as items on the page suddenly move, confusing visitors and potentially leading to misclicks. Optimizing these elements is not only crucial for speeding up your Shopify store but also for ensuring a smooth, stable browsing for your customers.
+
+👉 <a href="https://codepen.io/edmeehan/pen/QWPPREQ" title="CLS Demo on CodePen.io" target="_blank" rel="noopener">Demo of CLS in action</a>
+
+The remedy for both images and Shopify Apps involves reserving a predefined space for them, much like assigning a parking spot for a car. By setting clear boundaries, we ensure that other content can load smoothly around these spaces. When the image or App is ready, it seamlessly loads into the designated area without disrupting the overall page layout.
+
+```html
+<!-- image with width and height dimensions set -->
+<img width="100" height="100" />
+
+<!-- image using aspect-ratio -->
+<img style="aspect-ratio:1/1" />
+
+<!-- app wrapper with set height -->
+<div style="height:200px">
+<!-- add your app script injection point here -->
+</div>
+```
+
+### Shopify Apps that Affect Your Stores CLS
+
+Apps that use JavaScript to add content can disrupt your site’s layout, potentially increasing Cumulative Layout Shift (CLS). To evaluate their impact, install the app and monitor your Shopify store during load. If the app’s content snaps into place and pushes aside other elements, it's a clear sign of its contribution to CLS.
+
+An example of popular apps that impact CLS are:
+
+* <a href="https://www.rebuyengine.com/" target="_blank" rel="noopener"><strong>Rebuy</strong> Personalization Engine</a>
+* <a href="https://www.yotpo.com/" target="_blank" rel="noopener"><strong>Yotpo</strong> Customer Retention</a>
+* <a href="https://getrecharge.com/" target="_blank" rel="noopener"><strong>Recharge</strong> Product Subscriptions</a>
+
+## How to Detect and Fix LCP Problems on Your Shopify Store
+
+In this post, we'll concentrate on optimizing images and media to improve LCP, which is crucial for enhancing your store's page speed. Although large text blocks can be an LCP element, our focus will remain on visual elements like the hero or splash image, as these are typically the most impactful components for most slow Shopify stores.
+
+At the core of optimizing your LCP is ensuring that all media is used efficiently. For instance, loading an image that is larger than necessary is like downloading an entire movie when you only intend to watch the trailer—wasteful and inefficient. To avoid this, it's crucial to adapt image sizes precisely for their intended display areas.
+
+Fortunately, Shopify offers an image service that resizes images to your layout's specific needs, ensuring efficient use of media. Utilizing this feature requires a basic understanding of Shopify's Liquid templating language and familiarity with its <a href="https://shopify.dev/docs/api/liquid/filters/image_tag" target="_blank" rel="noopener">filter options</a>.
+
+```liquid
+<!-- the image will be resized to 600px wide -->
+{{ image | image_url: width: 600 | image_tag }}
+```
+
+Preloading is an additional feature available through Shopify Liquid filters, designed to improve the loading speed of media that appears above the fold. This capability enhances your store's most visible content but should be used carefully. Over-preloading can inadvertently increase the load times for your First Contentful Paint (FCP), as it might prematurely load excessive resources. Properly balancing this feature is crucial for optimizing both visibility and overall performance.
+
+```liquid
+<!-- the image will be resized to 600px wide and preloaded -->
+{{ image | image_url: width: 600 | image_tag, preload: true }}
+```
+
+#### Ready to Speed Up?
+
+**Knowing the problem is just the start; fixing it is where I come in. Ready to enhance your Shopify store?**

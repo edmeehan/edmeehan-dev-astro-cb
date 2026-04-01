@@ -1,0 +1,120 @@
+---
+_schema: blog
+uuid: 147e2908-d1ba-4384-9caa-5becbba9f75a
+title: Optimizing Images for Shopify. Should You Compress Before Uploading?
+headline: Optimizing Images for Shopify. Should You Compress Before Uploading?
+excerpt: >-
+  Learn if compressing images before uploading to Shopify is necessary and
+  discover  the best practices for maintaining image quality and enhancing site
+  performance.
+post_image:
+  src: /uploads/blog/shopify-image.jpg
+  alt: Shopify logo on an image of a tree
+  title: Shopify logo on an image of a tree
+published: 2024-06-03T00:00:00-08:00
+read_time: 1.5
+content_blocks:
+  - _bookshop_name: grid/side-by-side
+    content: >-
+      <h4 class="h2">I'm Ed, and I have helped Shopify stores improve page speed
+      by 300%</h4>
+
+
+      I know finding a reliable freelancer who truly delivers solutions can be
+      daunting, especially after past disappointments. That's why I'm here: to
+      clear the confusion and get your Shopify store on the fast track. With my
+      expertise, let's tackle your site's speed issues effectively. Let’s
+      restore your confidence and your store’s performance.
+    cta:
+      _bookshop_name: global/cta
+      label: Request a consultation
+      link: /consultation-request/
+      style: tertiary
+      size: default
+      new_tab: false
+    image:
+      _bookshop_name: global/image
+      src: /uploads/pages/2024-headshot.png
+      alt: Ed Meehan
+      title: Ed Meehan
+      width: 400
+      height:
+      loading: lazy
+    section:
+      gap_styles: curve
+      colors: primary
+      transition_animation: false
+      background_animation: null
+    layout:
+      format: left
+      content_align: center
+      media_align: center
+      media_expand: false
+      is_mini: false
+  - _bookshop_name: testimonial/single
+    testimonial: 4d31cf68-4293-4669-b9d6-c93c6204f564
+    section:
+      gap_styles: curve
+      colors: primary
+      transition_animation: true
+      background_animation: null
+seo:
+  no_index: false
+  page_title: Optimizing Images for Shopify. Should You Compress Before Uploading?
+  page_description: >-
+    Discover the best practices for uploading images to Shopify, including
+    compression tips,  automatic optimization insights, and format
+    recommendations to keep your images high-quality and your site fast.
+  featured_image:
+  open_graph_type: article
+  canonical_url:
+hidden: false
+show_share: true
+show_comments: false
+---
+Have you ever wondered if compressing your images before uploading them to Shopify is necessary? I thought I had the answer until a Reddit discussion made me rethink everything. In this post, I'll explore whether you need to compress your images before uploading them to Shopify and how the platform handles image optimization.
+
+## According to Shopify
+
+Shopify says you don't need to manually compress images before uploading. They recommend uploading the best-quality images available because their system automatically optimizes images using liquid image filters, provided your theme uses them.
+
+## Discovery
+
+During my research, I found valuable information in Shopify's documentation:
+
+* [Shopify CDN](https://cdn.shopify.com/)
+* [Shopify Help Center &gt; Uploading Images](https://help.shopify.com/en/manual/online-store/images/theme-images)
+
+Shopify compresses images using an automated image service that processes uploaded assets upon URL request and delivers them via a CDN. This process is similar to services like [ImgIX](https://www.imgix.com/) and [Netlify Image CDN](https://docs.netlify.com/image-cdn/overview/), ensuring your Shopify store images remain fast and responsive.
+
+## Testing
+
+<SnipImage caption="Test images from left to right: Ubrella, Sunset, Citrus, Birds, Colors, Abstract" src="/uploads/blog/ShopifyTestImages.jpg" width={3200} height={1200} alt="Test images from left to right: Ubrella, Sunset, Citrus, Birds, Colors, Abstract" jumbo={false} loading="lazy"/>
+
+To find the best source image type for Shopify, I conducted a series of tests with six images: three JPGs (Umbrella, Sunset, Citrus) and four PNGs (Abstract, Birds, Colors, Colors with transparency). I uploaded JPGs at 100%, 75%, and 50% quality, and PNGs as 24-bit lossless. By placing these images in a theme and modifying their formats using Shopify's liquid filters, I could observe the impact on file size and quality.
+
+```liquid
+{{ image_obj | image_url: width: 500, height: 500, crop: 'center'  | image_tag: width: 500, srcset: nil }}
+
+{{ image_obj | image_url: width: 200, height: 300, crop: 'center', format: 'pjpg' | image_tag: width: 200, srcset: nil }}
+```
+
+## Results
+
+The results confirmed Shopify's advice: uploading high-quality JPG images and letting Shopify handle the compression is usually the best approach. Notably, JPG images with gradient backgrounds benefited slightly from pre-compression, but the difference was minimal.
+
+Based on my tests, JPG is the best image format for Shopify due to its balance of quality and file size. PNGs should be used only when transparency is required, as they can quickly exceed Shopify's file size limits (20MB).
+
+<table><thead><tr><th><p>Info</p></th><th><p>WxH</p></th><th><p>Source (B)</p></th><th><p>Shopify (B)</p></th><th><p>Difference (%)</p></th></tr></thead><tbody><tr><td><p>Umbrella 100%</p></td><td><p>3024x4032</p></td><td><p>1507423</p></td><td><p>693918</p></td><td><p>117.23</p></td></tr><tr><td><p>Umbrella 75%</p></td><td><p>3024x4032</p></td><td><p>2118139</p></td><td><p>719088</p></td><td><p>*109.63</p></td></tr><tr><td><p>Umbrella 50%</p></td><td><p>3024x4032</p></td><td><p>1043231</p></td><td><p>776996</p></td><td><p>*94.01</p></td></tr><tr><td><p>Sunset 100%</p></td><td><p>4608x2963</p></td><td><p>2831860</p></td><td><p>2284188</p></td><td><p>23.98</p></td></tr><tr><td><p>Sunset 75%</p></td><td><p>4608x2963</p></td><td><p>3569354</p></td><td><p>2198679</p></td><td><p>*28.80</p></td></tr><tr><td><p>Sunset 50%</p></td><td><p>4608x2963</p></td><td><p>2172390</p></td><td><p>2171609</p></td><td><p>*30.40</p></td></tr><tr><td><p>Citrus 100%</p></td><td><p>4038x3712</p></td><td><p>3414883</p></td><td><p>2314338</p></td><td><p>47.55</p></td></tr><tr><td><p>Citrus 75%</p></td><td><p>4038x3712</p></td><td><p>4530507</p></td><td><p>2413428</p></td><td><p>*41.50</p></td></tr><tr><td><p>Citrus 50%</p></td><td><p>4038x3712</p></td><td><p>2700665</p></td><td><p>2612792</p></td><td><p>*30.70</p></td></tr><tr><td><p>Abstract</p></td><td><p>2880x3600</p></td><td><p>15304122</p></td><td><p>3719002</p></td><td><p>311.51</p></td></tr><tr><td><p>Abstract PJPG</p></td><td><p>2880x3600</p></td><td><p>15304122</p></td><td><p>2995122</p></td><td><p>410.97</p></td></tr><tr><td><p>Birds</p></td><td><p>3511x5309</p></td><td><p>14654123</p></td><td><p>762250</p></td><td><p>1822.48</p></td></tr><tr><td><p>Birds PJPG</p></td><td><p>3511x5309</p></td><td><p>14654123</p></td><td><p>1137455</p></td><td><p>1188.33</p></td></tr><tr><td><p>Colors</p></td><td><p>4000x4793</p></td><td><p>6543609</p></td><td><p>2156442</p></td><td><p>203.44</p></td></tr><tr><td><p>Colors PJPG</p></td><td><p>4000x4793</p></td><td><p>6543609</p></td><td><p>2071693</p></td><td><p>215.86</p></td></tr><tr><td><p>Colors Alpha</p></td><td><p>4000x4793</p></td><td><p>7350606</p></td><td><p>2070952</p></td><td><p>254.94</p></td></tr><tr><td><p>Colors Alpha PJPG</p></td><td><p>4000x4793</p></td><td><p>7350606</p></td><td><p>2092925</p></td><td><p>**251.21</p></td></tr></tbody></table>
+
+<small>* Difference when compared to 100% version of source.<br />** Difference does not include transparency.</small>
+
+Additional observations include:
+
+* JPGs with gradient backgrounds see minimal benefits from pre-upload compression.
+* PJPG format is effective only for PNGs with solid colors, as it doesn't improve other image types and removes transparency.
+* Shopify ensures effective compression, even when images are cropped.
+
+## Conclusion
+
+In conclusion, both Shopify's guidance and my tests indicate that uploading high-quality images without manual compression is the best practice. This ensures optimal performance and quality, leveraging Shopify's robust image optimization capabilities.
