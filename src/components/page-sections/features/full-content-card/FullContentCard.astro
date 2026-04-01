@@ -1,0 +1,102 @@
+---
+import CustomSection from '@builders/custom-section/CustomSection.astro';
+import Heading from '@core-elements/heading/Heading.astro';
+import Image from '@core-elements/image/Image.astro';
+import Text from '@core-elements/text/Text.astro';
+import Split from '@wrappers/split/Split.astro';
+
+type TagItem = { label: string };
+
+const {
+  heading = '',
+  subtext = '',
+  imageSource = '',
+  imageAlt = '',
+  tags = [],
+  reverse = false,
+  colorScheme = 'inherit',
+  backgroundColor,
+  paddingVertical = '4xl',
+  class: className,
+  useDefaultEditableBinding = false,
+  _component,
+  ...htmlAttributes
+} = Astro.props;
+---
+
+<CustomSection
+  class:list={['full-content-card', className]}
+  maxContentWidth="xl"
+  paddingHorizontal="lg"
+  paddingVertical={paddingVertical}
+  colorScheme={colorScheme}
+  backgroundColor={backgroundColor}
+  useDefaultEditableBinding={useDefaultEditableBinding}
+  {...htmlAttributes}
+>
+  <Split
+    class="full-content-card-layout"
+    distributionMode="half"
+    minSplitWidth={720}
+    reverse={reverse}
+    verticalAlignment="center"
+    gap="2xl"
+  >
+    <Image
+      slot="first"
+      class="full-content-card-image"
+      source={imageSource}
+      alt={imageAlt}
+      aspectRatio="square"
+      rounded={true}
+      data-prop-src="imageSource"
+      data-prop-alt="imageAlt"
+    />
+    <Fragment slot="second">
+      <Heading
+        level="h2"
+        size="xl"
+        data-prop="heading"
+      >
+        {heading}
+      </Heading>
+      <Text
+        class="full-content-card-subtext"
+        data-prop="subtext"
+        text={subtext}
+      />
+      {tags.length > 0 && (
+        <ul class="full-content-card-tags">
+          {tags.map((tag: TagItem) => (
+            <li class="full-content-card-tag">{tag.label}</li>
+          ))}
+        </ul>
+      )}
+    </Fragment>
+  </Split>
+</CustomSection>
+
+<style>
+  @layer page-sections {
+    :global(.full-content-card-subtext) {
+      margin-top: var(--spacing-lg);
+    }
+
+    .full-content-card-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--spacing-sm);
+      list-style: none;
+      margin: var(--spacing-xl) 0 0;
+      padding: 0;
+    }
+
+    .full-content-card-tag {
+      background-color: var(--color-surface);
+      border-radius: var(--radius-full);
+      color: var(--color-text);
+      font-size: var(--font-size-sm);
+      padding: var(--spacing-xs) var(--spacing-md);
+    }
+  }
+</style>

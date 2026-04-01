@@ -1,0 +1,90 @@
+heading:
+  type: text
+  comment: Main heading for the card.
+subtext:
+  type: markdown
+  comment: Supporting body copy beneath the heading.
+  options:
+    blockquote: false
+    bold: true
+    format:
+    italic: true
+    link: true
+    strike: false
+    subscript: true
+    superscript: true
+    underline: false
+    bulletedlist: false
+    numberedlist: false
+imageSource:
+  type: image
+  comment: Card image displayed alongside the content.
+  options:
+    paths:
+      uploads: src/assets/images
+      static: ''
+    resize_style: contain
+    width: 1200
+    height: 1200
+imageAlt:
+  type: text
+  comment: Alt text describing the image.
+tags:
+  type: array
+  comment: Pill tags displayed beneath the body copy.
+  options:
+    structures: _structures.fullContentCardTags
+reverse:
+  type: switch
+  comment: Flips the layout so the text appears before the image.
+colorScheme:
+  type: select
+  comment: Color scheme applied to the section.
+  options:
+    values:
+      - id: inherit
+        name: Inherit
+      - id: light
+        name: Light
+      - id: dark
+        name: Dark
+backgroundColor:
+  type: select
+  comment: Background color for the section.
+  options:
+    values:
+      - id: none
+        name: None
+      - id: base
+        name: Base
+      - id: surface
+        name: Surface
+      - id: accent
+        name: Accent
+      - id: highlight
+        name: Highlight
+paddingVertical:
+  type: select
+  comment: Vertical padding for the section.
+  options:
+    values:
+      - id: none
+        name: None
+      - id: sm
+        name: Small
+      - id: md
+        name: Medium
+      - id: lg
+        name: Large
+      - id: xl
+        name: Extra Large
+      - id: 2xl
+        name: 2xl
+      - id: 3xl
+        name: 3xl
+      - id: 4xl
+        name: 4xl
+      - id: 5xl
+        name: 5xl
+      - id: 6xl
+        name: 6xl

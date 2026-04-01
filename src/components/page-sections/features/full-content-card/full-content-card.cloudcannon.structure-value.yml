@@ -1,0 +1,45 @@
+label: Full Content Card
+icon: view_agenda
+description: Split layout pairing a large image with a heading, body copy, and tag pills.
+value:
+  _component: page-sections/features/full-content-card
+  heading: Inside the SunBum Shopify Build
+  subtext: >-
+    End-to-end Shopify implementation delivering a fast, reliable, and
+    conversion-optimized ecommerce experience at scale.
+  imageSource: /src/assets/images/placeholder.jpg
+  imageAlt: Project image
+  tags:
+    - label: Shopify
+    - label: Front-End Development
+    - label: Plug-in management
+  reverse: false
+  colorScheme: inherit
+  backgroundColor: base
+  paddingVertical: 4xl
+preview:
+  text:
+    - Full Content Card
+  subtext:
+    - key: heading
+  icon: view_agenda
+picker_preview:
+  text: Full Content Card
+  subtext: Split layout with image, content, and tag pills.
+_inputs_from_glob:
+  - /src/components/page-sections/features/full-content-card/full-content-card.cloudcannon.inputs.yml
+_structures:
+  fullContentCardTags:
+    values:
+      - label: Tag
+        icon: label
+        value:
+          label: Tag label
+        preview:
+          text:
+            - key: label
+            - Tag
+        _inputs:
+          label:
+            type: text
+            comment: Tag label text.
