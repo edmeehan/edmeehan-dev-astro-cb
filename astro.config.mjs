@@ -7,11 +7,14 @@ import { fileURLToPath } from "node:url";
 
 import mdx from "@astrojs/mdx";
 
+import { siteFonts } from "./site-fonts.mjs";
+
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://edmeehan.dev", // TODO: Update to your production URL
+  site: "https://edmeehan.dev",
+  fonts: siteFonts,
   build: {
     inlineStylesheets: "always",
   },
@@ -60,7 +63,7 @@ export default defineConfig({
             name: "preset-default",
             params: {
               overrides: {
-                cleanupIDs: false,
+                cleanupIds: false,
               },
             },
           },
@@ -80,12 +83,12 @@ export default defineConfig({
     mdx(),
   ],
   vite: {
+    build: {
+      chunkSizeWarningLimit: 1024,
+    },
     css: {
       devSourcemap: true,
       transformer: "lightningcss",
-    },
-    build: {
-      cssMinify: "lightningcss",
     },
     resolve: {
       alias: {

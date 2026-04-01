@@ -38,7 +38,6 @@ const {
   class: className,
   "data-prop-src": customDataPropSrc,
   "data-prop-alt": customDataPropAlt,
-  "data-editable": customDataEditable,
   _component,
   ...htmlAttributes
 } = Astro.props;
@@ -54,7 +53,7 @@ const isEditable =
   useDefaultEditableBinding || customDataPropSrc != null || customDataPropAlt != null;
 const dataAttributes = isEditable
   ? {
-      "data-editable": customDataEditable || "image",
+      "data-editable": "image",
       "data-prop-src": customDataPropSrc || "source",
       "data-prop-alt": customDataPropAlt || "alt",
     }
@@ -62,6 +61,7 @@ const dataAttributes = isEditable
 
 const positionClass = `position-${positionVertical}-${positionHorizontal}`;
 const isLocalSource = typeof source === "string" && source.startsWith("/src/");
+const isSvg = typeof source === "string" && source.toLowerCase().endsWith(".svg");
 
 let imageSrc = source;
 let imageWidth = width;
@@ -77,10 +77,16 @@ if (isLocalSource) {
   const imageKey = Object.keys(imageFiles).find((key) => key.endsWith(source));
 
   if (imageKey && imageFiles[imageKey]) {
-    imageSrc = imageFiles[imageKey];
-    imageWidth = imageWidth || imageSrc.width;
-    imageHeight = imageHeight || imageSrc.height;
-    shouldRenderOptimizedPicture = true;
+    if (isSvg) {
+      imageSrc = imageFiles[imageKey].src;
+      imageWidth = imageWidth || imageFiles[imageKey].width;
+      imageHeight = imageHeight || imageFiles[imageKey].height;
+    } else {
+      imageSrc = imageFiles[imageKey];
+      imageWidth = imageWidth || imageSrc.width;
+      imageHeight = imageHeight || imageSrc.height;
+      shouldRenderOptimizedPicture = true;
+    }
   } else {
     console.warn(`Local image not found for path: ${source}`);
   }
@@ -171,13 +177,13 @@ if (
       ) : (
         <picture>
           <img
-            src={source}
+            src={imageSrc}
             alt={normalizedAlt}
             loading={priority ? "eager" : "lazy"}
             decoding={priority ? "sync" : "async"}
             fetchpriority={priority ? "high" : undefined}
-            width={width}
-            height={height}
+            width={imageWidth}
+            height={imageHeight}
             {...dataAttributes}
           />
         </picture>

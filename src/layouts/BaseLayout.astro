@@ -2,6 +2,7 @@
 import StructuredData from "@components/utils/StructuredData.astro";
 import seoData from "@data/seo.json";
 import "@styles/style.css";
+import SiteFonts from "@layouts/SiteFonts.astro";
 import { SEO } from "astro-seo";
 
 export interface Props {
@@ -37,13 +38,12 @@ const pageImage = props.image || seoData.logoSource;
     <meta
       name="generator"
       content={Astro.generator}
-    />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400;0,600;0,700;1,400&family=Young+Serif&display=swap" rel="stylesheet">
+    />    
     <style is:inline>
       @layer reset, base, components, page-sections, utils, overrides;
     </style>
+
+    <SiteFonts />
 
     {
       import.meta.env.DEV ? (
@@ -57,6 +57,7 @@ const pageImage = props.image || seoData.logoSource;
     <script>
       if (window.inEditorMode) {
         import("../../live-editing");
+        import("../../editor-live-sync");
       }
     </script>
 

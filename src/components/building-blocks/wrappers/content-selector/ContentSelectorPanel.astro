@@ -4,6 +4,8 @@ import Heading from "@core-elements/heading/Heading.astro";
 
 const {
   title,
+  subtext,
+  iconName,
   contentSections,
   useDefaultEditableBinding = false,
   checked = false,
@@ -44,20 +46,36 @@ const arrayDataAttributes = effectiveChildrenProp
     for={tabId}
     role="tab"
     aria-controls={panelId}
+    aria-selected={checked ? "true" : "false"}
+    tabindex="0"
   >
     <Heading
       text={title}
       level="h3"
       size="h3"
+      iconName={iconName}
       alignX={navigationPosition === "top" ? "center" : "start"}
       class="content-selector-tab-heading"
     />
+    {
+      subtext && (
+        <span
+          class:list={[
+            "content-selector-tab-subtext",
+            `align-${navigationPosition === "top" ? "center" : "start"}`,
+          ]}
+        >
+          {subtext}
+        </span>
+      )
+    }
   </label>
   <div
     class="content-selector-panel"
     id={panelId}
     role="tabpanel"
     aria-labelledby={tabLabelId}
+    aria-hidden={checked ? "false" : "true"}
   >
     <div
       class="content-selector-panel-content"
@@ -111,6 +129,21 @@ const arrayDataAttributes = effectiveChildrenProp
 
       > :global(.content-selector-tab-heading) {
         margin: 0;
+      }
+    }
+
+    .content-selector-tab-subtext {
+      color: var(--color-text-muted);
+      display: block;
+      font-size: var(--font-size-body-sm);
+      margin-top: var(--spacing-2xs);
+
+      &.align-center {
+        text-align: center;
+      }
+
+      &.align-start {
+        text-align: start;
       }
     }
 

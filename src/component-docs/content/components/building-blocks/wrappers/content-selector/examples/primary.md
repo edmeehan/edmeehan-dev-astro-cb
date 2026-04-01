@@ -6,6 +6,8 @@ blocks:
   navigationPosition: start
   items:
     - title: Overview
+      subtext:
+      iconName:
       contentSections:
         - _component: building-blocks/core-elements/heading
           text: Overview
@@ -17,6 +19,8 @@ blocks:
           alignX: start
           size: md
     - title: Details
+      subtext:
+      iconName:
       contentSections:
         - _component: building-blocks/core-elements/heading
           text: Details
@@ -28,6 +32,8 @@ blocks:
           alignX: start
           size: md
     - title: Next steps
+      subtext:
+      iconName:
       contentSections:
         - _component: building-blocks/core-elements/heading
           text: Next steps
