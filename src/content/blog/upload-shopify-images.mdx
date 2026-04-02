@@ -8,7 +8,7 @@ description: >-
 date: 2024-06-03T00:00:00-08:00
 author: Ed Meehan
 image:
-  src: /uploads/blog/shopify-image.jpg
+  src: /blog/shopify-image.jpg
   alt: Shopify logo on an image of a tree
   title: Shopify logo on an image of a tree
 read_time: 1.5
@@ -38,7 +38,7 @@ Shopify compresses images using an automated image service that processes upload
 
 ## Testing
 
-<SnipImage caption="Test images from left to right: Ubrella, Sunset, Citrus, Birds, Colors, Abstract" src="/uploads/blog/ShopifyTestImages.jpg" width={3200} height={1200} alt="Test images from left to right: Ubrella, Sunset, Citrus, Birds, Colors, Abstract" jumbo={false} loading="lazy"/>
+<Image source="/blog/ShopifyTestImages.jpg" alt="Test images from left to right: Ubrella, Sunset, Citrus, Birds, Colors, Abstract" rounded={true} aspectRatio="horizontal-strip"/>
 
 To find the best source image type for Shopify, I conducted a series of tests with six images: three JPGs (Umbrella, Sunset, Citrus) and four PNGs (Abstract, Birds, Colors, Colors with transparency). I uploaded JPGs at 100%, 75%, and 50% quality, and PNGs as 24-bit lossless. By placing these images in a theme and modifying their formats using Shopify's liquid filters, I could observe the impact on file size and quality.
 

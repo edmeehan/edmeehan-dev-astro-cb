@@ -100,10 +100,10 @@ const date = post.data.date.toLocaleDateString("en-US", {
     }
 
     {
-      post.data.image && (
+      post.data.image?.src && (
         <Image
-          source={post.data.image}
-          alt={post.data.title}
+          source={post.data.image.src}
+          alt={post.data.image?.alt || post.data.title}
           rounded={true}
           data-prop-src="image"
           data-prop-alt="title"

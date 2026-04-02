@@ -91,12 +91,13 @@ const pageDescription =
                     paddingVertical="lg"
                     paddingHorizontal="lg"
                   >
-                    {post.data.image && (
+                    {post.data.image?.src && (
                       <Image
                         slot="before"
-                        source={post.data.image}
-                        alt={post.data.title}
+                        source={post.data.image.src}
+                        alt={post.data.image?.alt || post.data.title}
                         aspectRatio="landscape"
+                        positionHorizontal="left"
                       />
                     )}
                     <SimpleText
