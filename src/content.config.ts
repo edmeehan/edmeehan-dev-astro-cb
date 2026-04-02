@@ -91,8 +91,21 @@ const blogPostSchema = z.object({
   description: z.string(),
   date: z.coerce.date(),
   author: z.string().default("Anonymous"),
-  image: z.string().optional(),
-  tags: z.array(z.string()).default([]),
+  image: z.object({
+    src: z.string().nullish(),
+    alt: z.string().nullish(),
+    title: z.string().nullish(),
+  }).optional(),
+  read_time: z.number().optional(),
+  tags: z.array(z.string()).nullish(),
+  seo: z.object({
+    no_index: z.boolean().default(false),
+    title: z.string().nullish(),
+    description: z.string().nullish(),
+    image: z.string().nullish(),
+    open_graph_type: z.string().default("article"),
+    canonical_url: z.string().nullish(),
+  }).optional(),
 });
 
 const blogCollection = defineCollection({
