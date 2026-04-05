@@ -1,0 +1,19 @@
+label: Typeface Logo
+icon: title
+description: "Text-based typeface logo with an optional brand message."
+value:
+  _component: building-blocks/core-elements/typeface-logo
+  logoText: ""
+  brandMessage: ""
+preview:
+  text:
+    - Typeface Logo
+  subtext:
+    - key: logoText
+  icon: title
+picker_preview:
+  text: Typeface Logo
+  subtext: "Text-based typeface logo with an optional brand message."
+  icon: title
+_inputs_from_glob:
+  - /src/components/building-blocks/core-elements/typeface-logo/typeface-logo.cloudcannon.inputs.yml

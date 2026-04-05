@@ -1,7 +1,9 @@
 ---
 import CustomSection from "@builders/custom-section/CustomSection.astro";
+import Image from "@components/building-blocks/core-elements/image/Image.astro";
+import Grid from "@components/building-blocks/wrappers/grid/Grid.astro";
+import GridItem from "@components/building-blocks/wrappers/grid/GridItem.astro";
 import Heading from "@core-elements/heading/Heading.astro";
-import Image from "@core-elements/image/Image.astro";
 import SimpleText from "@core-elements/simple-text/SimpleText.astro";
 import Text from "@core-elements/text/Text.astro";
 import ButtonGroup from "@wrappers/button-group/ButtonGroup.astro";
@@ -23,71 +25,78 @@ const {
 <CustomSection
   class:list={["hero-center", className]}
   maxContentWidth="2xl"
-  paddingHorizontal="4xl"
+  paddingHorizontal="lg"
   paddingVertical={paddingVertical}
   colorScheme="inherit"
   backgroundColor={backgroundColor}
   {...htmlAttributes}
 >
-  <SimpleText
-    alignX="center"
-    class="eyebrow"
-    data-prop="eyebrow"
-    text={eyebrow}
-  />
-  <Heading
-    level="h1"
-    size="2xl"
-    alignX="center"
-    data-prop="heading"
-  >
-    {heading}
-  </Heading>
-  <Text
-    alignX="center"
-    class="subtext"
-    data-prop="subtext"
-    text={subtext}
-  />
-  <ButtonGroup
-    class="buttonSections"
-    buttonSections={buttonSections}
-    alignX="center"
-    data-children-prop="buttonSections"
-  />
-
-  <Image
-    source={images.imageSource_1}
-    alt={images.imageAlt_1}
-    rounded={true}
-    aspectRatio={1}
-    data-prop-src="images.imageSource_1"
-    data-prop-alt="images.imageAlt_1"
-    priority={true}
-  />
-
-  <Image
-    source={images.imageSource_2}
-    alt={images.imageAlt_2}
-    rounded={true}
-    aspectRatio={1}
-    data-prop-src="images.imageSource_2"
-    data-prop-alt="images.imageAlt_2"
-    priority={true}
-  />
-
-  <Image
-    source={images.imageSource_3}
-    alt={images.imageAlt_3}
-    rounded={true}
-    aspectRatio={1}
-    data-prop-src="images.imageSource_3"
-    data-prop-alt="images.imageAlt_3"
-    priority={true}
-  />
+  <Grid>
+    <GridItem>
+      <SimpleText
+        alignX="center"
+        class="eyebrow"
+        data-prop="eyebrow"
+        text={eyebrow}
+      />
+      <Heading
+        level="h1"
+        size="2xl"
+        alignX="center"
+        data-prop="heading"
+      >
+        {heading}
+      </Heading>
+      <Text
+        alignX="center"
+        class="subtext"
+        data-prop="subtext"
+        text={subtext}
+      />
+      <ButtonGroup
+        class="buttonSections"
+        buttonSections={buttonSections}
+        alignX="center"
+        data-children-prop="buttonSections"
+      />
+    </GridItem>
+    <GridItem>
+      <Image
+        source={images.imageSource_1}
+        alt={images.imageAlt_1}
+        rounded={true}
+        aspectRatio={1}
+        data-prop-src="images.imageSource_1"
+        data-prop-alt="images.imageAlt_1"
+        priority={true}
+      />
+    </GridItem>
+    <GridItem>
+      <Image
+        source={images.imageSource_2}
+        alt={images.imageAlt_2}
+        rounded={true}
+        aspectRatio={1}
+        data-prop-src="images.imageSource_2"
+        data-prop-alt="images.imageAlt_2"
+        priority={true}
+      />
+    </GridItem>
+    <GridItem>
+      <Image
+        source={images.imageSource_3}
+        alt={images.imageAlt_3}
+        rounded={true}
+        aspectRatio={1}
+        data-prop-src="images.imageSource_3"
+        data-prop-alt="images.imageAlt_3"
+        priority={true}
+      />
+    </GridItem>
+  </Grid>
 </CustomSection>
 
-<style lang="pcss">
+<style is:global>
   @layer overrides {
     .subtext {
       :global(p) {

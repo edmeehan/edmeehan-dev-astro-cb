@@ -1,11 +1,11 @@
-logoSource:
+logoText:
   type: text
-  label: Logo Source
-  comment: Path to the logo image.
-logoAlt:
+  label: Logo Text
+  comment: Typeface logo text displayed in the mobile navigation.
+brandMessage:
   type: text
-  label: Logo Alt Text
-  comment: Alternative text for the logo image.
+  label: Brand Message
+  comment: Secondary brand message displayed alongside the logo text.
 navData:
   type: array
   label: Navigation Data

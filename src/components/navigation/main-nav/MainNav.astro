@@ -2,7 +2,7 @@
 import CustomSection from "@builders/custom-section/CustomSection.astro";
 import Bar from "@components/navigation/bar/Bar.astro";
 import Mobile from "@components/navigation/mobile/Mobile.astro";
-import Image from "@core-elements/image/Image.astro";
+import TypefaceLogo from "@core-elements/typeface-logo/TypefaceLogo.astro";
 import ButtonGroup from "@wrappers/button-group/ButtonGroup.astro";
 
 type NavButton = {
@@ -12,8 +12,8 @@ type NavButton = {
 };
 
 const {
-  logoSource,
-  logoAlt = "logo",
+  logoText,
+  brandMessage,
   navData = [],
   buttonSections = [] as NavButton[],
   class: className,
@@ -36,16 +36,15 @@ const mobileNavData = [
   maxContentWidth="2xl"
   paddingHorizontal="lg"
   paddingVertical="none"
+  backgroundColor="none"
   class:list={["main-nav", className]}
   {...htmlAttributes}
   useDefaultEditableBinding={false}
 >
   <a href="/">
-    <Image
-      source={logoSource}
-      class="main-nav-logo"
-      alt={logoAlt}
-      useDefaultEditableBinding={false}
+    <TypefaceLogo
+      logoText={logoText}
+      brandMessage={brandMessage}
     />
   </a>
   <div class="nav-end">
@@ -63,8 +62,8 @@ const mobileNavData = [
     />
   </div>
   <Mobile
-    logoSource={logoSource}
-    logoAlt={logoAlt}
+    logoText={logoText}
+    brandMessage={brandMessage}
     navData={mobileNavData}
     class="mobile-main-nav"
     useDefaultEditableBinding={false}
@@ -74,11 +73,25 @@ const mobileNavData = [
 <style is:global>
   @layer page-sections {
     .main-nav {
-      background-color: var(--color-bg);
-      padding-block: var(--spacing-md);
+      padding-block: var(--spacing-2xl);
       position: sticky;
       top: 0;
       z-index: var(--layer-2);
+      transition: all var(--animation-normal) ease;
+
+      &.scrolled-below-fold {
+        background-color: var(--color-bg);
+
+        &.is-scrolled {
+          padding-block: var(--spacing-md);
+        }
+      }
+
+      &:not(.scrolled-below-fold) {
+        > .outer-content > .content > .nav-end {
+          opacity: 0;
+        }
+      }
 
       .desktop-main-nav,
       .desktop-button-group.button-group {
@@ -121,6 +134,7 @@ const mobileNavData = [
         flex-shrink: 0;
         justify-content: flex-end;
         margin-left: auto;
+        transition: all var(--animation-slow) ease;
 
         > .button-group {
           container-type: normal;
@@ -129,3 +143,24 @@ const mobileNavData = [
     }
   }
 </style>
+
+<script>
+  // Disable scroll anchoring — prevents the browser from adjusting scrollY
+  // when the nav's padding changes, which would cause a false scroll event
+  // that immediately reverses the is-scrolled toggle.
+  document.documentElement.style.overflowAnchor = "none";
+
+  const nav = document.querySelector(".main-nav");
+  let lastY = window.scrollY;
+
+  window.addEventListener("scroll", () => {
+    const currentY = window.scrollY;
+    const diff = currentY - lastY;
+    const threshold = window.innerHeight * 0.5;
+
+    nav?.classList.toggle("is-scrolled", diff > 0);
+    nav?.classList.toggle("scrolled-below-fold", currentY > threshold);
+
+    lastY = currentY;
+  }, { passive: true });
+</script>

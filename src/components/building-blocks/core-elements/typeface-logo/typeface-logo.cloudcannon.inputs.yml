@@ -1,0 +1,6 @@
+logoText:
+  type: text
+  comment: "The primary typeface logo text."
+brandMessage:
+  type: text
+  comment: "Secondary brand message displayed alongside the logo text."

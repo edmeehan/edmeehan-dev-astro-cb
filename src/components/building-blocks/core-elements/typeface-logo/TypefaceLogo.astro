@@ -1,0 +1,47 @@
+---
+const {
+  logoText,
+  brandMessage,
+  class: className,
+  useDefaultEditableBinding: _useDefaultEditableBinding = false,
+  _component,
+  ...htmlAttributes
+} = Astro.props;
+
+if (!_component && !logoText && !brandMessage) return;
+---
+
+<div
+  class:list={["typeface-logo", className]}
+  {...htmlAttributes}
+>
+  {logoText && <span class="typeface-logo-text">{logoText}</span>}
+  {brandMessage && <span class="typeface-logo-brand-message">{brandMessage}</span>}
+</div>
+
+<style>
+  @layer components {
+    .typeface-logo {
+      align-items: baseline;
+      display: inline-flex;
+      flex-direction: column;
+      gap: var(--spacing-xs);
+      text-decoration: none;
+
+      .typeface-logo-text {
+        color: var(--color-text-strong);
+        font-size: var(--font-size-3xl);
+        font-weight: var(--font-weight-normal);
+        font-family: var(--font-headings);
+        line-height: 1;
+      }
+
+      .typeface-logo-brand-message {
+        color: var(--color-text-muted);
+        font-size: var(--font-size-sm);
+        font-weight: var(--font-weight-normal);
+        line-height: 1;
+      }
+    }
+  }
+</style>

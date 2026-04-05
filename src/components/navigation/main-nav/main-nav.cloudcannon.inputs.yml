@@ -1,13 +1,9 @@
-logoSource:
-  type: image
-  comment: "Logo image source URL or path. Leave empty to hide the logo."
-  options:
-    resize_style: contain
-    width: 1920
-    height: 1280
-logoAlt:
+logoText:
   type: text
-  comment: "Alt text for the logo image for accessibility."
+  comment: "Typeface logo text displayed in the navigation."
+brandMessage:
+  type: text
+  comment: "Secondary brand message displayed alongside the logo text."
 navData:
   type: array
   comment: "Array of navigation items to render in the navigation bar."
