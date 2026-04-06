@@ -1,0 +1,16 @@
+/* Breakpoints mirror the --content-width-* scale */
+@custom-media --bp-xs (width >= 350px);
+@custom-media --bp-sm (width >= 480px);
+@custom-media --bp-md (width >= 640px);
+@custom-media --bp-lg (width >= 768px);
+@custom-media --bp-xl (width >= 1024px);
+@custom-media --bp-2xl (width >= 1280px);
+@custom-media --bp-3xl (width >= 1536px);
+
+@custom-media --bp-xs-down (width < 350px);
+@custom-media --bp-sm-down (width < 480px);
+@custom-media --bp-md-down (width < 640px);
+@custom-media --bp-lg-down (width < 768px);
+@custom-media --bp-xl-down (width < 1024px);
+@custom-media --bp-2xl-down (width < 1280px);
+@custom-media --bp-3xl-down (width < 1536px);
