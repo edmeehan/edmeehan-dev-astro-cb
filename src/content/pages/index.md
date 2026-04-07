@@ -6,12 +6,12 @@ description: >-
   easy to edit and maintain.
 pageSections:
   - _component: page-sections/heroes/hero-story
-    eyebrow: Eyebrow text
-    heading: Heading text
-    subtext: Subtext placeholder text that will be replaced with actual content.
+    eyebrow: Shopify Expert
+    heading: Reliable execution without the agency complexity or freelancer uncertainty.
+    subtext: I help brands migrate off fragile stacks into stable, scalable platforms. Technical precision with strategic thinking and no agency bloat.
     buttonSections:
       - _component: building-blocks/core-elements/button
-        text: My Button
+        text: View my services
         hideText: false
         link: ''
         iconName: ''

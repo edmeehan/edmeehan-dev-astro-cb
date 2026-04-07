@@ -12,7 +12,7 @@
     h6 {
       color: var(--color-text-strong);
       font-family: var(--font-headings);
-      font-weight: var(--font-weight-bold);
+      font-weight: var(--font-weight-normal);
       margin-bottom: 0.5em;
       margin-top: 0.8em;
     }
@@ -116,8 +116,8 @@
     color: var(--color-text-muted);
     font-size: var(--font-size-sm);
     font-weight: 600;
-    letter-spacing: 0.08em;
-    margin-bottom: var(--spacing-sm);
+    letter-spacing: 13%;
+    margin-bottom: var(--spacing-lg);
     text-transform: uppercase;
   }
 
@@ -128,7 +128,7 @@
   .eyebrow + h4,
   .eyebrow + h5,
   .eyebrow + h6 {
-    margin-top: 0;
+    margin-top: 0!important;
   }
 
   .subtext {

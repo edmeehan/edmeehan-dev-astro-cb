@@ -205,4 +205,30 @@ if (!_component && !hasText && !hasSlotContent && !hasIcon) return;
       }
     }
   }
+
+  @layer overrides {
+    .button {
+      > .button-inner {
+        &.variant-primary {
+          border-radius: 10rem;
+          text-transform: uppercase;
+
+          /* &.size-sm {
+            font-size: var(--font-size-xs);
+          } */
+
+          &.size-md {
+            font-size: var(--font-size-sm);
+            padding-inline: var(--spacing-lg);
+            padding-block: var(--spacing-md);
+            letter-spacing: 13%;
+          }
+
+          /* &.size-lg {
+            font-size: var(--font-size-xl);
+          } */
+        }
+      }
+    }
+  }
 </style>
