@@ -117,7 +117,7 @@ const {
       .hero-story__grid {
         :global(> .grid-inner.layout-start) {
           grid-template-columns: repeat(12, 1fr);
-          grid-template-rows: 300px auto 150px;
+          grid-template-rows: minmax(20vh, 300px) auto 150px;
           gap: 0;
         }
       }
@@ -128,10 +128,21 @@ const {
       .hero-story__img-primary {
         grid-column: 1 / span 4;
         grid-row: 1 / span 3;
+        align-self: center;
+
+        :global(> .grid-item-content) {
+          height: auto;
+        }
       }
       .hero-story__img-secondary {
         grid-column: 9 / span 3;
-        grid-row: 1;
+        grid-row: 1 / span 2;
+        position: absolute;
+
+        :global(.image) {
+          position: relative;
+          top: -100px;
+        }
       }
       .hero-story__img-tertiary {
         grid-column: 9 / span 4;
