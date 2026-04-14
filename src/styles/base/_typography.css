@@ -25,26 +25,31 @@
 
     .h00 {
       font-size: var(--font-size-heading-4xl);
+      letter-spacing: -1%;
       line-height: 1.2;
     }
 
     .h0 {
       font-size: var(--font-size-heading-3xl);
+      letter-spacing: -1%;
       line-height: 1.2;
     }
 
     h1,.h1 {
       font-size: var(--font-size-heading-2xl);
+      letter-spacing: -1%;
       line-height: 1.2;
     }
 
     h2,.h2 {
       font-size: var(--font-size-heading-xl);
+      letter-spacing: -1%;
       line-height: 1.4;
     }
 
     h3,.h3 {
       font-size: var(--font-size-heading-lg);
+      letter-spacing: -1%;
       line-height: 1.2;
     }
 
@@ -59,16 +64,19 @@
 
     h4,.h4 {
       font-size: var(--font-size-heading-md);
+      letter-spacing: -1%;
       line-height: 1.2;
     }
 
     h5,.h5 {
       font-size: var(--font-size-heading-sm);
+      letter-spacing: -1%;
       line-height: 1.2;
     }
 
     h6,.h6 {
       font-size: var(--font-size-heading-xs);
+      letter-spacing: -1%;
       line-height: 1.2;
     }
 
@@ -117,8 +125,12 @@
     font-size: var(--font-size-sm);
     font-weight: 600;
     letter-spacing: 13%;
-    margin-bottom: var(--spacing-lg);
+    margin-bottom: var(--spacing-sm);
     text-transform: uppercase;
+
+    @media (--bp-md) {
+      margin-bottom: var(--spacing-lg);
+    }
   }
 
   .eyebrow + .heading,

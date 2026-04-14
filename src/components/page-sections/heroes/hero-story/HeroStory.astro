@@ -40,7 +40,7 @@ const {
       />
       <Heading
         level="h1"
-        size="xl"
+        size="2xl"
         data-prop="heading"
       >
         {heading}
@@ -50,13 +50,15 @@ const {
         data-prop="subtext"
         text={subtext}
       />
+    </GridItem>
+    <GridItem class:list={["hero-story__buttons"]}>
       <ButtonGroup
         class="buttonSections"
         buttonSections={buttonSections}
         data-children-prop="buttonSections"
       />
     </GridItem>
-    <GridItem class:list={["hero-story__img-primary"]}>
+    <GridItem class:list={["hero-story__img", "hero-story__img--primary"]}>
       <Image
         source={images.imageSource_1}
         alt={images.imageAlt_1}
@@ -67,7 +69,7 @@ const {
         priority={true}
       />
     </GridItem>
-    <GridItem class:list={["hero-story__img-secondary"]}>
+    <GridItem class:list={["hero-story__img", "hero-story__img--secondary"]}>
       <Image
         source={images.imageSource_2}
         alt={images.imageAlt_2}
@@ -78,7 +80,7 @@ const {
         priority={true}
       />
     </GridItem>
-    <GridItem class:list={["hero-story__img-tertiary"]}>
+    <GridItem class:list={["hero-story__img", "hero-story__img--tertiary"]}>
       <Image
         source={images.imageSource_3}
         alt={images.imageAlt_3}
@@ -89,6 +91,10 @@ const {
         priority={true}
       />
     </GridItem>
+    <div class:list={["hero-story__stroke", "hero-story__stroke--1"]}></div>
+    <div class:list={["hero-story__stroke", "hero-story__stroke--2"]}></div>
+    <div class:list={["hero-story__stroke", "hero-story__stroke--3"]}></div>
+    <div class:list={["hero-story__stroke", "hero-story__stroke--4"]}></div>
   </Grid>
 </CustomSection>
 
@@ -97,56 +103,204 @@ const {
 
   @layer page-section {
     .hero-story {
+      --stroke-color: black;
+      overflow: hidden;
       :global(.heading) + .subtext {
         margin-top: 0;
       }
-      .subtext + .buttonSections {
-        margin-top: var(--spacing-2xl);
+    }
+    .hero-story__grid {
+      :global(> .grid-inner.layout-start) {
+        grid-template-columns: repeat(var(--columns), 1fr);
+        gap: 0;
       }
+    }
+    .hero-story__img {
+      position: relative;
+      z-index: 5;
+      :global(.image) {
+        position: relative;
+      }
+    }
+    .hero-story__stroke {
+      position: relative;
+      z-index: 1;
     }
 
     @media (--bp-md-down) {
-      .hero-story__grid {
-        :global(> .grid-inner.layout-start) {
-          grid-template-columns: 1fr;
+      .hero-story {
+        --columns: 8;
+        &:first-child {
+          padding-block-start: 100px;
         }
+        padding-block: var(--spacing-xl);
+      }
+      .hero-story__text {
+        grid-column: span 8;
+        grid-row: 1;
+        padding-block-end: var(--spacing-xl);
+        :global(.align-start) {
+          text-align: center;
+        }
+      }
+      .hero-story__buttons {
+        grid-column: span 8;
+        grid-row: 5;
+        padding-block-start: var(--spacing-xl);
+        :global(.align-start) {
+          justify-content: center;
+        }
+      }
+      .hero-story__img--primary {
+        grid-column: 3 / span 4;
+        grid-row: 2 / span 3;
+      }
+      .hero-story__img--secondary {
+        --offset: calc(100% / 3);
+        grid-column: 1 / span 3;
+        grid-row: 2 / span 3;
+        align-self: end;
+
+        :global(.image) {
+          left: calc(calc(var(--spacing-lg) + var(--offset)) * -1);
+        }
+      }
+      .hero-story__img--tertiary {
+        --offset: calc(calc(100% / 4) * 2);
+        grid-column: 5 / span 4;
+        grid-row: 3 / span 2;
+
+        :global(.image) {
+          right: calc(calc(var(--spacing-sm) + var(--offset)) * -1);
+        }
+      }
+      .hero-story__stroke--1 {
+        grid-column: 1 / span 2;
+        grid-row: 2;
+        border-top: solid 2px var(--stroke-color);
+        border-left: solid 2px var(--stroke-color);
+        border-radius: 1rem 0 0 0;
+        transform: translateY(50%);
+      }
+      .hero-story__stroke--2 {
+        grid-column: 7 / span 2;
+        grid-row: 3;
+        border-bottom: solid 2px var(--stroke-color);
+        border-right: solid 2px var(--stroke-color);
+        border-radius: 0 0 1rem 0;
+        transform: translateY(40%);
+      }
+      .hero-story__stroke--3,
+      .hero-story__stroke--4 {
+        display: none;
       }
     }
 
     @media (--bp-md) {
+      .hero-story {
+        --columns: 12;
+      }
       .hero-story__grid {
         :global(> .grid-inner.layout-start) {
-          grid-template-columns: repeat(12, 1fr);
-          grid-template-rows: minmax(20vh, 300px) auto 150px;
-          gap: 0;
+          grid-template-rows: auto auto auto auto 3rem;
         }
       }
       .hero-story__text {
         grid-column: 6 / span 7;
         grid-row: 2;
+        align-self: end;
+        padding-block-start: var(--spacing-xl);
       }
-      .hero-story__img-primary {
-        grid-column: 1 / span 4;
-        grid-row: 1 / span 3;
+      .hero-story__buttons {
+        grid-column: 6 / span 7;
+        grid-row: 3;
+        padding-block-start: var(--spacing-lg);
+        padding-block-end: var(--spacing-xl);
+      }
+      .hero-story__img--primary {
+        --offset: calc(100% / 5);
+        grid-column: 1 / span 5;
+        grid-row: 2 / span 2;
         align-self: center;
 
         :global(> .grid-item-content) {
           height: auto;
         }
-      }
-      .hero-story__img-secondary {
-        grid-column: 9 / span 3;
-        grid-row: 1 / span 2;
-        position: absolute;
 
         :global(.image) {
-          position: relative;
-          top: -100px;
+          left: calc(var(--offset) * -1);
         }
       }
-      .hero-story__img-tertiary {
-        grid-column: 9 / span 4;
-        grid-row: 3;
+      .hero-story__img--secondary {
+        --offset: -2rem;
+        grid-column: 9 / span 3;
+        grid-row: 1;
+        margin-bottom: var(--offset);
+
+        :global(.image) {
+          top: var(--offset);
+        }
+      }
+      .hero-story__img--tertiary {
+        --offset: calc(100% / 5);
+        grid-column: 8 / span 5;
+        grid-row: 4;
+
+        :global(.image) {
+          left: var(--offset);
+        }
+      }
+      .hero-story__stroke--1 {
+        grid-column: 1 / span 2;
+        grid-row: 2 / span 3;
+        border-bottom: solid 2px var(--stroke-color);
+        border-right: solid 2px var(--stroke-color);
+        border-radius: 0 0 1rem 0;
+        transform: translateX(2px);
+        &::before {
+          content: '';
+          display: block;
+          width: 50vw;
+          height: 2px;
+          background-color: var(--stroke-color);
+          position: absolute;
+          bottom: -2px;
+          right: 1rem;
+        }
+      }
+      .hero-story__stroke--2 {
+        grid-column: 12;
+        grid-row: 1;
+        border-bottom: solid 2px var(--stroke-color);
+        border-right: solid 2px var(--stroke-color);
+        border-radius: 0 0 1rem 0;
+        transform: translateY(-50%);
+      }
+      .hero-story__stroke--3 {
+        grid-column: 6 / span 3;
+        grid-row: 4 / span 2;
+        border-top: solid 2px var(--stroke-color);
+        border-left: solid 2px var(--stroke-color);
+        border-radius: 1rem 0 0 0;
+        transform: translateY(calc(50% - 1.5rem));
+        &::before {
+          content: '';
+          display: block;
+          width: 50vw;
+          height: 2px;
+          background-color: var(--stroke-color);
+          position: absolute;
+          top: -2px;
+          left: 100%;
+        }
+      }
+      .hero-story__stroke--4 {
+        grid-column: 3 / span 6;
+        grid-row: 1;
+        border-top: solid 2px var(--stroke-color);
+        border-left: solid 2px var(--stroke-color);
+        border-radius: 1rem 0 0 0;
+        transform: translateY(50%);
       }
     }
 
@@ -154,14 +308,46 @@ const {
       .hero-story__text {
         grid-column: 6 / span 5;
       }
-      .hero-story__img-primary {
+      .hero-story__img--primary {
+        --offset: 0;
         grid-column: 1 / span 4;
+        grid-row: 1 / span 3;
+        align-self: end;
       }
-      .hero-story__img-secondary {
-        grid-column: 9 / span 3;
+      .hero-story__stroke--1 {
+        grid-row: 4;
       }
-      .hero-story__img-tertiary {
-        grid-column: 9 / span 4;
+    }
+
+    @media (width >= 1900px) {
+      .hero-story {
+        position: relative;
+        &::after {
+          content: '';
+          border-bottom: solid 2px var(--stroke-color);
+          border-left: solid 2px var(--stroke-color);
+          border-radius: 0 0 0 1rem;
+          display: block;
+          width: 30vw;
+          height: 50%;
+          left: 50%;
+          top: 0;
+          position: absolute;
+          transform: translateX(1000px);
+        }
+        &::before {
+          content: '';
+          border-bottom: solid 2px var(--stroke-color);
+          border-right: solid 2px var(--stroke-color);
+          border-radius: 0 0 1rem 0;
+          display: block;
+          width: 50vw;
+          height: 30%;
+          left: 50%;
+          top: 0;
+          position: absolute;
+          transform: translateX(calc(-1000px - 50vw));
+        }
       }
     }
   }

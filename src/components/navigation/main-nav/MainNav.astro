@@ -71,9 +71,11 @@ const mobileNavData = [
 </CustomSection>
 
 <style is:global>
+  @import "/src/styles/variables/_breakpoints.css";
+
   @layer page-sections {
     .main-nav {
-      padding-block: var(--spacing-2xl);
+      padding-block: var(--spacing-md);
       position: sticky;
       top: 0;
       z-index: var(--layer-2);
@@ -81,10 +83,6 @@ const mobileNavData = [
 
       &.scrolled-below-fold {
         background-color: var(--color-bg);
-
-        &.is-scrolled {
-          padding-block: var(--spacing-md);
-        }
       }
 
       &:not(.scrolled-below-fold) {
@@ -141,6 +139,25 @@ const mobileNavData = [
         }
       }
     }
+
+    @media (--bp-md) {
+      .main-nav {
+        padding-block: var(--spacing-2xl);
+        
+        &.scrolled-below-fold {
+          &.is-scrolled {
+            padding-block: var(--spacing-md);
+          }
+        }
+      }
+    }
+  }
+
+  @layer overrides {
+    .main-nav {
+      position: fixed;
+      width: 100vw;
+    }
   }
 </style>
 
@@ -156,7 +173,9 @@ const mobileNavData = [
   window.addEventListener("scroll", () => {
     const currentY = window.scrollY;
     const diff = currentY - lastY;
-    const threshold = window.innerHeight * 0.5;
+    const threshold = window.innerWidth < 640
+      ? window.innerHeight * 0.1
+      : window.innerHeight * 0.5;
 
     nav?.classList.toggle("is-scrolled", diff > 0);
     nav?.classList.toggle("scrolled-below-fold", currentY > threshold);
