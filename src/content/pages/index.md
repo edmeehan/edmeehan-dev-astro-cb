@@ -7,8 +7,12 @@ description: >-
 pageSections:
   - _component: page-sections/heroes/hero-story
     eyebrow: Shopify Expert
-    heading: Reliable execution without the agency complexity or freelancer uncertainty.
-    subtext: I help brands migrate off fragile stacks into stable, scalable platforms. Technical precision with strategic thinking and no agency bloat.
+    heading: >-
+      Reliable execution without the agency complexity or freelancer
+      uncertainty.
+    subtext: >-
+      I help brands migrate off fragile stacks into stable, scalable platforms.
+      Technical precision with strategic thinking and no agency bloat.
     buttonSections:
       - _component: building-blocks/core-elements/button
         text: View my services
@@ -19,11 +23,11 @@ pageSections:
         variant: primary
         size: md
     images:
-      imageSource_1: /src/assets/images/component-docs/dunedin-cliff.jpg
+      imageSource_1: /src/assets/images/castle.jpg
       imageAlt_1: Hero image
       imageSource_2: /src/assets/images/component-docs/dunedin-cliff.jpg
       imageAlt_2: Hero image
-      imageSource_3: /src/assets/images/component-docs/dunedin-cliff.jpg
+      imageSource_3: /src/assets/images/sheep.jpg
       imageAlt_3: Hero image
     backgroundColor: default
   - _component: page-sections/features/feature-grid
