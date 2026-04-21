@@ -3,6 +3,7 @@ import CustomSection from "@builders/custom-section/CustomSection.astro";
 import Heading from "@core-elements/heading/Heading.astro";
 import Image from "@core-elements/image/Image.astro";
 import SimpleText from "@core-elements/simple-text/SimpleText.astro";
+import Tag from "@core-elements/tag/Tag.astro";
 import Text from "@core-elements/text/Text.astro";
 import ButtonGroup from "@wrappers/button-group/ButtonGroup.astro";
 import Grid from "@wrappers/grid/Grid.astro";
@@ -12,6 +13,7 @@ const {
   eyebrow = "",
   heading = "",
   subtext = "",
+  tags = [],
   buttonSections = [],
   images,
   backgroundColor,
@@ -95,6 +97,9 @@ const {
     <div class:list={["hero-story__stroke", "hero-story__stroke--2"]}></div>
     <div class:list={["hero-story__stroke", "hero-story__stroke--3"]}></div>
     <div class:list={["hero-story__stroke", "hero-story__stroke--4"]}></div>
+    {tags.length > 0 && tags.map((tag: any, index: number) => (
+      <Tag class:list={["hero-story__tag", `hero-story__tag--${index + 1}`]} text={tag.text} color={tag.color} iconName={tag.iconName} />
+    ))}
   </Grid>
 </CustomSection>
 
@@ -108,6 +113,12 @@ const {
       :global(.heading) + .subtext {
         margin-top: 0;
       }
+    }
+    .hero-story__tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--spacing-xs);
+      margin-top: var(--spacing-md);
     }
     .hero-story__grid {
       :global(> .grid-inner.layout-start) {
@@ -125,6 +136,10 @@ const {
     .hero-story__stroke {
       position: relative;
       z-index: 1;
+    }
+    .hero-story__tag {
+      position: relative;
+      z-index: 6;
     }
 
     @media (--bp-md-down) {
@@ -193,6 +208,15 @@ const {
       .hero-story__stroke--3,
       .hero-story__stroke--4 {
         display: none;
+      }
+      .hero-story__tag {
+        place-self: center;
+      }
+      .hero-story__tag--1,
+      .hero-story__tag--2,
+      .hero-story__tag--3 {
+        grid-column: 2 / span 3;
+        grid-row: 4;
       }
     }
 
@@ -301,6 +325,21 @@ const {
         border-left: solid 2px var(--stroke-color);
         border-radius: 1rem 0 0 0;
         transform: translateY(50%);
+      }
+      .hero-story__tag {
+        place-self: center;
+      }
+      .hero-story__tag--1 {
+        grid-column: 4 / span 4;
+        grid-row: 1;
+      }
+      .hero-story__tag--2 {
+        grid-column: 6 / span 3;
+        grid-row: 4;
+      }
+      .hero-story__tag--3 {
+        grid-column: 1 / span 4;
+        grid-row: 4;
       }
     }
 

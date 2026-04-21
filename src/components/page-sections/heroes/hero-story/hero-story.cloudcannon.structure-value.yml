@@ -15,6 +15,16 @@ value:
       iconPosition: before
       variant: primary
       size: md
+  tags:
+    - text: Design
+      color: "#3b82f6"
+      iconName: ""
+    - text: Development
+      color: "#10b981"
+      iconName: ""
+    - text: Creative
+      color: "#a855f7"
+      iconName: ""
   images:
     imageSource_1: /src/assets/images/component-docs/dunedin-cliff.jpg
     imageAlt_1: Hero image

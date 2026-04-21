@@ -1,0 +1,18 @@
+label: Tag
+icon: label
+description: A small labeled badge with a color and optional icon.
+value:
+  _component: building-blocks/core-elements/tag
+  text: Tag Label
+  color: ""
+preview:
+  text:
+    - Tag
+  subtext:
+    - key: text
+  icon: label
+picker_preview:
+  text: Tag
+  subtext: A small labeled badge with a color and optional icon.
+_inputs_from_glob:
+  - /src/components/building-blocks/core-elements/tag/tag.cloudcannon.inputs.yml

@@ -1,0 +1,53 @@
+---
+const {
+  text,
+  color,
+  class: className,
+  _component,
+  ...htmlAttributes
+} = Astro.props;
+
+const hasText = text?.trim().length > 0;
+
+if (!_component && !hasText) return;
+
+const colorStyle = color?.trim() ? `--tag-color: ${color}` : undefined;
+---
+
+<div
+  class:list={["tag", className]}
+  style={colorStyle}
+  {...htmlAttributes}
+>
+  <span class="tag-text">{text}</span>
+</div>
+
+<style>
+  @layer components {
+    .tag {
+      align-items: center;
+      background-color: var(--color-bg-muted);
+      border-radius: 10rem;
+      color: var(--color-text-strong);
+      display: inline-flex;
+      font-size: var(--font-size-xs);
+      font-weight: var(--font-weight-normal);
+      gap: 0.5rem;
+      line-height: 1.4;
+      letter-spacing: -1%;
+      padding-block: 0.65rem;
+      padding-inline: 1.45rem;
+      vertical-align: middle;
+      white-space: nowrap;
+
+      &[style*="--tag-color"]::before {
+        background-color: var(--tag-color);
+        content: "";
+        width: 1em;
+        height: 1em;
+        display: inline-block;
+        border-radius: 100%;
+      }
+    }
+  }
+</style>

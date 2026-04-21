@@ -22,6 +22,13 @@ pageSections:
         iconPosition: before
         variant: primary
         size: md
+    tags:
+    - text: Technical Thinker
+      color: blue
+    - text: Shopify Expert
+      color: green
+    - text: Shaka Thrower
+      color: purple
     images:
       imageSource_1: /src/assets/images/castle.jpg
       imageAlt_1: Hero image

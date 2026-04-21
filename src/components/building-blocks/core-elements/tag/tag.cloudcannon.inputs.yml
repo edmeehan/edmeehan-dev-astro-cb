@@ -1,0 +1,6 @@
+text:
+  type: text
+  comment: The label text displayed inside the tag.
+color:
+  type: color
+  comment: The color of the tag text and tinted background.

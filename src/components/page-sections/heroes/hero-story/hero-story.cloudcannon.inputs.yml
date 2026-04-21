@@ -60,6 +60,18 @@ images.imageSource_3:
 images.imageAlt_3:
   type: text
   comment: Alt text for the feature image for accessibility.
+tags:
+  type: array
+  comment: Optional tags displayed below the subtext.
+  options:
+    structures:
+      values:
+        - label: Tag
+          icon: label
+          value:
+            text: Tag Label
+            color: default
+            iconName: ""
 buttonSections:
   type: array
   comment: Button blocks for calls to action.
