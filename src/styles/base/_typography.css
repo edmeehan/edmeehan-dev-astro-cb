@@ -121,8 +121,7 @@
   }
 
   .eyebrow {
-    color: var(--color-text-muted);
-    font-size: var(--font-size-sm);
+    --color-text: var(--color-text-muted);
     font-weight: 600;
     letter-spacing: 13%;
     margin-bottom: var(--spacing-sm);

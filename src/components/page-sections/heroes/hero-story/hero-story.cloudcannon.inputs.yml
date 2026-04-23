@@ -82,5 +82,5 @@ backgroundColor:
   comment: Background color for the hero.
   options:
     values:
-      - id: default
-        name: Default
+      - id: highlight
+        name: Highlight

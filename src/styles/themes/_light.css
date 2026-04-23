@@ -13,6 +13,12 @@
   --color-text-on-muted: var(--gray-12);
   --color-text-on-brand: var(--gray-0);
   --color-text-inverse: var(--gray-0);
+
+  --color-text-highlight: #1F3F44;
+  --color-text-highlight-eyebrow: #186266;
+
+;
+
   --color-link: blue;
   --color-link-hover: darkblue;
 
@@ -20,7 +26,8 @@
   --color-bg-surface: var(--gray-1);
   --color-bg-muted: var(--gray-2);
   --color-bg-accent: #d5fdff;
-  --color-bg-highlight: #fff9d6;
+  --color-bg-highlight: #DDE5E6;
+  --color-bg-highlight-grad: #A7C8D3;
   --color-bg-brand: var(--color-brand);
   --color-bg-brand-muted: var(--color-brand-muted);
   --color-bg-inverse: var(--gray-12);
@@ -33,6 +40,9 @@
   --color-state-hover: rgba(0, 0, 0, 0.04);
   --color-state-active: rgba(0, 0, 0, 0.08);
   --color-overlay: rgba(0, 0, 0, 0.5);
+
+  --color-orb-highlight-1: #E4E1D3;
+  --color-orb-highlight-2: #FCF9F9;
 
   --color-focus-ring: rgba(0, 87, 255, 0.4);
   --color-error: #f00;

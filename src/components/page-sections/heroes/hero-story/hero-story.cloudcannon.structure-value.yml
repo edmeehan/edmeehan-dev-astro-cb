@@ -32,7 +32,7 @@ value:
     imageAlt_2: Hero image
     imageSource_3: /src/assets/images/component-docs/dunedin-cliff.jpg
     imageAlt_3: Hero image
-  backgroundColor: default
+  backgroundColor: highlight
 preview:
   text:
     - Hero Story

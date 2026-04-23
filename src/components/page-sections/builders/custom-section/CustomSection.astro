@@ -59,8 +59,22 @@ const arrayDataAttributes =
       background={true}
     />
     {
-      backgroundColor && (
-        <div class:list={["background", backgroundColor && `bg-${backgroundColor}`]} />
+      backgroundColor && backgroundColor !== "highlight" && (
+        <div class:list={["background", backgroundColor && `bg-${backgroundColor}`]}/>
+      )
+    }
+    {
+      backgroundColor && backgroundColor === "highlight" && (
+        <script>
+          import "@components/islands/gradient-orbs.js";
+        </script>
+
+        <gradient-orbs class:list={["background", "bg-highlight"]}
+          style={{
+            "--orb-color-1": "var(--color-orb-highlight-1)",
+            "--orb-color-2": "var(--color-orb-highlight-2)",
+          }}
+        />
       )
     }
 
@@ -287,7 +301,22 @@ const arrayDataAttributes =
         }
 
         > .bg-highlight {
-          background-color: var(--color-bg-highlight);
+          /* background-color: var(--color-bg-highlight); */
+          background: linear-gradient(135deg, var(--color-bg-highlight), var(--color-bg-highlight-grad));
+        }
+      }
+    }
+  }
+  @layer overrides {
+    .custom-section {
+      &:has(.bg-highlight) {
+        :global(.heading, .text) {
+          --color-text-strong: var(--color-text-highlight);
+          --color-text: var(--color-text-highlight);
+        }
+        :global(.eyebrow) {
+          --color-text: var(--color-text-highlight-eyebrow);
+
         }
       }
     }

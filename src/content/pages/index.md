@@ -36,7 +36,7 @@ pageSections:
       imageAlt_2: Hero image
       imageSource_3: /src/assets/images/sheep.jpg
       imageAlt_3: Hero image
-    backgroundColor: default
+    backgroundColor: highlight
   - _component: page-sections/features/feature-grid
     eyebrow: Principles
     heading: Built for real-world web projects
