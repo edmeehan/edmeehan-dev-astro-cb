@@ -24,11 +24,11 @@ pageSections:
         size: md
     tags:
     - text: Technical Thinker
-      color: blue
+      color: "#33A8AE"
     - text: Shopify Expert
-      color: green
+      color: "#E5A67E"
     - text: Shaka Thrower
-      color: purple
+      color: "#8AB73E"
     images:
       imageSource_1: /src/assets/images/castle.jpg
       imageAlt_1: Hero image

@@ -26,11 +26,11 @@ const colorStyle = color?.trim() ? `--tag-color: ${color}` : undefined;
   @layer components {
     .tag {
       align-items: center;
-      background-color: var(--color-bg-muted);
+      background-color: var(--gray-0);
       border-radius: 10rem;
       color: var(--color-text-strong);
       display: inline-flex;
-      font-size: var(--font-size-xs);
+      font-size: var(--font-size-sm);
       font-weight: var(--font-weight-normal);
       gap: 0.5rem;
       line-height: 1.4;
@@ -39,6 +39,7 @@ const colorStyle = color?.trim() ? `--tag-color: ${color}` : undefined;
       padding-inline: 1.45rem;
       vertical-align: middle;
       white-space: nowrap;
+      box-shadow: 0px .8em 3em 0px #0000001A;
 
       &[style*="--tag-color"]::before {
         background-color: var(--tag-color);

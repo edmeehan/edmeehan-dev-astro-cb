@@ -71,8 +71,8 @@ const arrayDataAttributes =
 
         <gradient-orbs class:list={["background", "bg-highlight"]}
           style={{
-            "--orb-color-1": "var(--color-orb-highlight-1)",
-            "--orb-color-2": "var(--color-orb-highlight-2)",
+            "--orb-color-1": "var(--color-bg-highlight-orb-1)",
+            "--orb-color-2": "var(--color-bg-highlight-orb-2)",
           }}
         />
       )
@@ -301,7 +301,11 @@ const arrayDataAttributes =
         }
 
         > .bg-highlight {
-          /* background-color: var(--color-bg-highlight); */
+          + :global(.content){
+            --color-brand: var(--color-burnt-orange);
+            --color-bg-brand: var(--color-burnt-orange);
+            --color-bg-brand-muted: color-mix(in srgb, black 20%, var(--color-burnt-orange));
+          }
           background: linear-gradient(135deg, var(--color-bg-highlight), var(--color-bg-highlight-grad));
         }
       }
