@@ -14,9 +14,6 @@
   --color-text-on-brand: var(--gray-0);
   --color-text-inverse: var(--gray-0);
 
-  --color-text-highlight: var(--color-everygreen);
-  --color-text-highlight-eyebrow: var(--color-everygreen-light);
-
   --color-link: blue;
   --color-link-hover: darkblue;
 
@@ -33,7 +30,6 @@
   --color-bg-highlight-border-2: var(--color-bg-highlight-border-1);
   --color-bg-highlight-border-3: var(--color-bg-highlight-border-1);
   --color-bg-highlight-border-4: var(--color-bg-highlight-border-1);
-
 
   --color-bg-brand: var(--color-brand);
   --color-bg-brand-muted: var(--color-brand-muted);

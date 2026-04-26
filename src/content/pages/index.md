@@ -38,30 +38,27 @@ pageSections:
       imageAlt_3: Hero image
     backgroundColor: highlight
   - _component: page-sections/features/feature-grid
-    eyebrow: Principles
-    heading: Built for real-world web projects
-    subtext: No trends. No noise. Just reliability.
+    eyebrow: Services
+    heading: Fixed-scope projects delivered fast. No agency bloat. No surprises.
+    subtext: 
     features:
-      - title: Web fundamentals
+      - title: Design & Build
         description: >-
-          Semantic HTML. Lean CSS. JavaScript only when it's needed. The stack
-          is boring by design, and that’s exactly why it works.
+          Your last agency took months, went over budget, and left you with a store held together like Frankenstein. I deliver premium Shopify storefronts to a fixed scope — they look great, perform on mobile, and don't break when you touch them.
         iconName: cube
-        iconColor: blue
-      - title: Built for speed
+        iconColor: default
+      - title: Speed & Optimization
         description: >-
-          Static-rendered, minimal payloads, zero waste. Built to be extremely
-          fast from the first byte.
+          You've paid for speed apps and audits. Your score is still 32. You're losing sales every day your store crawls.
         iconName: bolt
-        iconColor: yellow
-      - title: Everything just fits
+        iconColor: default
+      - title: Ongoing Support
         description: >-
-          Simple, predictable components that play nice together. Build bigger
-          pieces without creating a maintenance mess.
+          You're stuck chasing developers who ghost when things break. Every issue costs you time and revenue.
         iconName: puzzle-piece
-        iconColor: green
+        iconColor: default
     colorScheme: inherit
-    backgroundColor: surface
+    backgroundColor: accent
     gap: xl
     minItemWidth: 280
     maxItemWidth: 360
@@ -79,7 +76,7 @@ pageSections:
       - label: Plug-in management
     reverse: false
     colorScheme: inherit
-    backgroundColor: accent
+    backgroundColor: none
     paddingVertical: 3xl
   - _component: page-sections/features/feature-article
     post: /src/content/blog/2025-12-24-content-first-design.mdx

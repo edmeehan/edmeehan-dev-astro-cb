@@ -24,16 +24,16 @@ const {
 >
   <Card
     class:list={["feature-item", className]}
-    paddingHorizontal="lg"
-    paddingVertical="lg"
+    paddingHorizontal="2xl"
+    paddingVertical="2xl"
     rounded
-    border
+    border={false}
     backgroundColor="base"
   >
     <Icon
       class="feature-icon"
       name={iconName}
-      size="lg"
+      size="2xl"
       color={iconColor}
       background={iconBackground}
       alignX="start"
@@ -41,7 +41,7 @@ const {
     <Heading
       class="feature-title"
       level="h3"
-      size="md"
+      size="lg"
       alignX="start"
       data-prop="title"
     >
@@ -58,13 +58,17 @@ const {
 
 <style>
   @layer page-sections {
-    :global(.feature-title) {
-      margin-bottom: var(--spacing-sm);
-      margin-top: var(--spacing-sm);
+    .feature-title {
+      margin-bottom: calc(var(--spacing-sm) * -1);
+      margin-top: var(--spacing-md);
     }
 
-    :global(.feature-description) {
+    .feature-description {
       margin-top: 0;
+
+      :global(p:last-child) {
+        margin-bottom: 0;
+      }
     }
   }
 </style>

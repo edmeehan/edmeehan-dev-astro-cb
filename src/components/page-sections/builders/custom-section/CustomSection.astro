@@ -297,30 +297,33 @@ const arrayDataAttributes =
         }
 
         > .bg-accent {
-          background-color: var(--color-bg-accent);
-        }
-
-        > .bg-highlight {
-          + :global(.content){
+          background-color: var(--color-everygreen-light);
+          & + :global(.content){
             --color-brand: var(--color-burnt-orange);
             --color-bg-brand: var(--color-burnt-orange);
             --color-bg-brand-muted: color-mix(in srgb, black 20%, var(--color-burnt-orange));
-          }
-          background: linear-gradient(135deg, var(--color-bg-highlight), var(--color-bg-highlight-grad));
-        }
-      }
-    }
-  }
-  @layer overrides {
-    .custom-section {
-      &:has(.bg-highlight) {
-        :global(.heading, .text) {
-          --color-text-strong: var(--color-text-highlight);
-          --color-text: var(--color-text-highlight);
-        }
-        :global(.eyebrow) {
-          --color-text: var(--color-text-highlight-eyebrow);
+            --color-text-strong: var(--gray-0);
+            --color-text-muted: var(--color-lime);
+            --color-text: var(--gray-0);
 
+            :global(.card) {
+              &:has(.bg-base) {
+                --color-bg: var(--color-everygreen);
+              }
+            }
+          }
+        }
+
+        > .bg-highlight {
+          background: linear-gradient(135deg, var(--color-bg-highlight), var(--color-bg-highlight-grad));
+          & + :global(.content){
+            --color-brand: var(--color-burnt-orange);
+            --color-bg-brand: var(--color-burnt-orange);
+            --color-bg-brand-muted: color-mix(in srgb, black 20%, var(--color-burnt-orange));
+            --color-text-strong: var(--color-everygreen);
+            --color-text-muted: var(--color-everygreen-light);
+            --color-text: var(--color-everygreen);
+          }
         }
       }
     }
