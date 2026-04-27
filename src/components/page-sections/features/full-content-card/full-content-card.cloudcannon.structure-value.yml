@@ -16,7 +16,6 @@ value:
   reverse: false
   colorScheme: inherit
   backgroundColor: base
-  paddingVertical: 4xl
 preview:
   text:
     - Full Content Card

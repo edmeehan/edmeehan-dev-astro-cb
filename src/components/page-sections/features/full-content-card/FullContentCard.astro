@@ -17,7 +17,6 @@ const {
   reverse = false,
   colorScheme = 'inherit',
   backgroundColor,
-  paddingVertical = '4xl',
   class: className,
   useDefaultEditableBinding = false,
   _component,
@@ -28,8 +27,8 @@ const {
 <CustomSection
   class:list={['full-content-card', className]}
   maxContentWidth="2xl"
-  paddingHorizontal="lg"
-  paddingVertical={paddingVertical}
+  paddingHorizontal="md"
+  paddingVertical="lg"
   colorScheme={colorScheme}
   backgroundColor={backgroundColor}
   useDefaultEditableBinding={useDefaultEditableBinding}
@@ -49,14 +48,14 @@ const {
       minSplitWidth={720}
       reverse={reverse}
       verticalAlignment="center"
-      gap="2xl"
+      gap="lg"
     >
       <Image
         slot="first"
         class="full-content-card-image"
         source={imageSource}
         alt={imageAlt}
-        aspectRatio="square"
+        aspectRatio="landscape"
         rounded={true}
         data-prop-src="imageSource"
         data-prop-alt="imageAlt"
@@ -64,7 +63,7 @@ const {
       <Fragment slot="second">
         <Heading
           level="h2"
-          size="xl"
+          size="lg"
           data-prop="heading"
         >
           {heading}
@@ -88,8 +87,8 @@ const {
 
 <style>
   @layer page-sections {
-    :global(.full-content-card-subtext) {
-      margin-top: var(--spacing-lg);
+    .full-content-card-subtext {
+      margin-top: 0;
     }
 
     .full-content-card-tags {
@@ -102,7 +101,7 @@ const {
     }
 
     .full-content-card-tag {
-      background-color: var(--color-surface);
+      background-color: #F2EFDE;
       border-radius: var(--radius-full);
       color: var(--color-text);
       font-size: var(--font-size-sm);

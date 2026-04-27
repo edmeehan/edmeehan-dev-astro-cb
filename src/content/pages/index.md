@@ -77,7 +77,6 @@ pageSections:
     reverse: false
     colorScheme: inherit
     backgroundColor: surface
-    paddingVertical: 3xl
   - _component: page-sections/features/feature-article
     post: /src/content/blog/2025-12-24-content-first-design.mdx
     colorScheme: inherit
