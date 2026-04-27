@@ -16,6 +16,9 @@ subtext:
     underline: false
     bulletedlist: false
     numberedlist: false
+link:
+  type: url
+  comment: The URL to which the card should link.
 imageSource:
   type: image
   comment: Card image displayed alongside the content.

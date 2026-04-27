@@ -17,6 +17,7 @@ const {
   reverse = false,
   colorScheme = 'inherit',
   backgroundColor,
+  link,
   class: className,
   useDefaultEditableBinding = false,
   _component,
@@ -41,6 +42,7 @@ const {
     rounded
     border={false}
     backgroundColor="base"
+    link={link}
   >
     <Split
       class="full-content-card-layout"
@@ -63,20 +65,20 @@ const {
       <Fragment slot="second">
         <Heading
           level="h2"
-          size="lg"
+          size="sm"
           data-prop="heading"
         >
           {heading}
         </Heading>
         <Text
-          class="full-content-card-subtext"
+          class="subtext"
           data-prop="subtext"
           text={subtext}
         />
         {tags.length > 0 && (
-          <ul class="full-content-card-tags">
+          <ul class="tags">
             {tags.map((tag: TagItem) => (
-              <li class="full-content-card-tag">{tag.label}</li>
+              <li class="tag">{tag.label}</li>
             ))}
           </ul>
         )}
@@ -86,26 +88,56 @@ const {
 </CustomSection>
 
 <style>
+  @import "/src/styles/variables/_breakpoints.css";
+
   @layer page-sections {
-    .full-content-card-subtext {
+    .subtext {
       margin-top: 0;
     }
 
-    .full-content-card-tags {
+    .tags {
       display: flex;
       flex-wrap: wrap;
       gap: var(--spacing-sm);
       list-style: none;
-      margin: var(--spacing-xl) 0 0;
+      margin-block-start: var(--spacing-lg);
+      margin-block-end: 0;
       padding: 0;
     }
 
-    .full-content-card-tag {
+    .tag {
       background-color: #F2EFDE;
       border-radius: var(--radius-full);
       color: var(--color-text);
-      font-size: var(--font-size-sm);
+      font-size: var(--font-size-xs);
       padding: var(--spacing-xs) var(--spacing-md);
+    }
+
+    @media (--bp-md) {
+      .full-content-card {
+        :global(> .outer-content > .content) {
+          padding-inline: var(--spacing-lg);
+          padding-block: var(--spacing-4xl);
+        }
+      }
+      .feature-item {
+        :global(.card-content) {
+          padding-inline: var(--spacing-3xl);
+        }
+      }
+      .subtext {
+        :global(.text-inner p) {
+          font-size: var(--font-size-xl);
+        }
+      }
+      :global(.heading-inner) {
+        font-size: var(--font-size-heading-4xl);
+        line-height: 1.2;
+      }
+      .tag {
+        font-size: var(--font-size-sm);
+        padding: var(--spacing-sm) var(--spacing-md);
+      }
     }
   }
 </style>

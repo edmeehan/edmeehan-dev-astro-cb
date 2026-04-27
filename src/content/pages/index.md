@@ -68,6 +68,7 @@ pageSections:
     subtext: >-
       End-to-end Shopify implementation delivering a fast, reliable, and
       conversion-optimized ecommerce experience at scale.
+    link: '/about'
     imageSource: /src/assets/images/dunedin-cliff.jpg
     imageAlt: Project image
     tags:

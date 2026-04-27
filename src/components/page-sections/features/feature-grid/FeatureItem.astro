@@ -24,7 +24,7 @@ const {
 >
   <Card
     class:list={["feature-item", className]}
-    paddingHorizontal="lg"
+    paddingHorizontal="xl"
     paddingVertical="2xl"
     rounded
     border={false}
@@ -33,7 +33,7 @@ const {
     <Icon
       class="feature-icon"
       name={iconName}
-      size="2xl"
+      size="3xl"
       color={iconColor}
       background={iconBackground}
       alignX="start"
@@ -67,9 +67,13 @@ const {
 
     .feature-description {
       margin-top: 0;
+    }
 
-      :global(p:last-child) {
-        margin-bottom: 0;
+    @media (--bp-md-down) {
+      .feature-item {
+        :global(.card-content) {
+          padding-block-start: var(--spacing-2xl);
+        }
       }
     }
 
