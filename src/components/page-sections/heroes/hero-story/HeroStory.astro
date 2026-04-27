@@ -27,7 +27,7 @@ const {
   class:list={["hero-story", className]}
   maxContentWidth="2xl"
   paddingHorizontal="lg"
-  paddingVertical="none"
+  paddingVertical="3xl"
   colorScheme="inherit"
   backgroundColor={backgroundColor}
   {...htmlAttributes}
@@ -159,10 +159,9 @@ const {
     @media (--bp-md-down) {
       .hero-story {
         --columns: 8;
-        &:first-child {
-          padding-block-start: 100px;
+        :global(> .outer-content > .content) {
+          padding-block-start: 120px;
         }
-        padding-block: var(--spacing-xl);
       }
       .hero-story__text {
         grid-column: span 8;
@@ -237,6 +236,9 @@ const {
     @media (--bp-md) {
       .hero-story {
         --columns: 12;
+        :global(> .outer-content > .content) {
+          padding-block-end: 0px;
+        }
       }
       .hero-story__grid {
         :global(> .grid-inner.layout-start) {
@@ -358,6 +360,11 @@ const {
     }
 
     @media (--bp-xl) {
+      .hero-story {
+        :global(> .outer-content > .content) {
+          padding-block-start: 0px;
+        }
+      }
       .hero-story__text {
         grid-column: 6 / span 5;
       }

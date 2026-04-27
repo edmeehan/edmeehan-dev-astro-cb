@@ -17,10 +17,10 @@
   --color-link: blue;
   --color-link-hover: darkblue;
 
-  --color-bg: var(--gray-0);
-  --color-bg-surface: var(--gray-1);
+  --color-bg: var(--color-sand);
+  --color-bg-surface: var(--color-pebble);
   --color-bg-muted: var(--gray-2);
-  --color-bg-accent: #d5fdff;
+  --color-bg-accent: var(--color-everygreen-light);
 
   --color-bg-highlight: #DDE5E6;
   --color-bg-highlight-grad: #A7C8D3;

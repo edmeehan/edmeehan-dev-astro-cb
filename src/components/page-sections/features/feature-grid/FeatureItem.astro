@@ -24,7 +24,7 @@ const {
 >
   <Card
     class:list={["feature-item", className]}
-    paddingHorizontal="2xl"
+    paddingHorizontal="lg"
     paddingVertical="2xl"
     rounded
     border={false}
@@ -41,7 +41,7 @@ const {
     <Heading
       class="feature-title"
       level="h3"
-      size="lg"
+      size="sm"
       alignX="start"
       data-prop="title"
     >
@@ -57,6 +57,8 @@ const {
 </GridItem>
 
 <style>
+  @import "/src/styles/variables/_breakpoints.css";
+
   @layer page-sections {
     .feature-title {
       margin-bottom: calc(var(--spacing-sm) * -1);
@@ -68,6 +70,19 @@ const {
 
       :global(p:last-child) {
         margin-bottom: 0;
+      }
+    }
+
+    @media (--bp-md) {
+      .feature-grid-item {
+        :global(.heading-inner) {
+          font-size: var(--font-size-heading-lg);
+        }
+
+        :global(.card-content) {
+          padding-block: var(--spacing-2xl);
+          padding-inline: var(--spacing-2xl);
+        }
       }
     }
   }

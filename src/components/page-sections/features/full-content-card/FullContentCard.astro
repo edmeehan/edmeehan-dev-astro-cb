@@ -3,6 +3,7 @@ import CustomSection from '@builders/custom-section/CustomSection.astro';
 import Heading from '@core-elements/heading/Heading.astro';
 import Image from '@core-elements/image/Image.astro';
 import Text from '@core-elements/text/Text.astro';
+import Card from '@wrappers/card/Card.astro';
 import Split from '@wrappers/split/Split.astro';
 
 type TagItem = { label: string };
@@ -26,7 +27,7 @@ const {
 
 <CustomSection
   class:list={['full-content-card', className]}
-  maxContentWidth="xl"
+  maxContentWidth="2xl"
   paddingHorizontal="lg"
   paddingVertical={paddingVertical}
   colorScheme={colorScheme}
@@ -34,46 +35,55 @@ const {
   useDefaultEditableBinding={useDefaultEditableBinding}
   {...htmlAttributes}
 >
-  <Split
-    class="full-content-card-layout"
-    distributionMode="half"
-    minSplitWidth={720}
-    reverse={reverse}
-    verticalAlignment="center"
-    gap="2xl"
+  <Card
+    class:list={["feature-item", className]}
+    paddingHorizontal="lg"
+    paddingVertical="2xl"
+    rounded
+    border={false}
+    backgroundColor="base"
   >
-    <Image
-      slot="first"
-      class="full-content-card-image"
-      source={imageSource}
-      alt={imageAlt}
-      aspectRatio="square"
-      rounded={true}
-      data-prop-src="imageSource"
-      data-prop-alt="imageAlt"
-    />
-    <Fragment slot="second">
-      <Heading
-        level="h2"
-        size="xl"
-        data-prop="heading"
-      >
-        {heading}
-      </Heading>
-      <Text
-        class="full-content-card-subtext"
-        data-prop="subtext"
-        text={subtext}
+    <Split
+      class="full-content-card-layout"
+      distributionMode="half"
+      minSplitWidth={720}
+      reverse={reverse}
+      verticalAlignment="center"
+      gap="2xl"
+    >
+      <Image
+        slot="first"
+        class="full-content-card-image"
+        source={imageSource}
+        alt={imageAlt}
+        aspectRatio="square"
+        rounded={true}
+        data-prop-src="imageSource"
+        data-prop-alt="imageAlt"
       />
-      {tags.length > 0 && (
-        <ul class="full-content-card-tags">
-          {tags.map((tag: TagItem) => (
-            <li class="full-content-card-tag">{tag.label}</li>
-          ))}
-        </ul>
-      )}
-    </Fragment>
-  </Split>
+      <Fragment slot="second">
+        <Heading
+          level="h2"
+          size="xl"
+          data-prop="heading"
+        >
+          {heading}
+        </Heading>
+        <Text
+          class="full-content-card-subtext"
+          data-prop="subtext"
+          text={subtext}
+        />
+        {tags.length > 0 && (
+          <ul class="full-content-card-tags">
+            {tags.map((tag: TagItem) => (
+              <li class="full-content-card-tag">{tag.label}</li>
+            ))}
+          </ul>
+        )}
+      </Fragment>
+    </Split>
+  </Card>
 </CustomSection>
 
 <style>
