@@ -115,6 +115,9 @@ const {
 
     @media (--bp-md) {
       .full-content-card {
+        :global(.split-inner) {
+          gap: var(--spacing-3xl);
+        }
         :global(> .outer-content > .content) {
           padding-inline: var(--spacing-lg);
           padding-block: var(--spacing-4xl);
