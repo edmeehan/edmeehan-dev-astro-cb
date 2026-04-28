@@ -72,22 +72,28 @@ pageSections:
     maxItemWidth: 360
     align: center
   - _component: page-sections/people/testimonial-grid
-    eyebrow: Eyebrow text
-    heading: Heading text
-    subtext: Subtext text
+    eyebrow: Testimonials
+    heading: What it actually feels like to work with someone who gives a damn.
+    subtext:
     testimonials:
-      - testimonial: Nice testimonial here...
+      - testimonial: >-
+          Ed is simply the best developer I have ever worked with. His communication
+          and attention to detail are second to none. He delivered a complete store
+          build in 8 weeks and future proofed our store through Shopify.
         logo: /src/assets/images/component-docs/profile.jpg
         logo_alt: Logo alt
-        name: Client name
-        title: Position / Company
+        name: Megan Lowe
+        title: Director of Digital Design and Development, Sun Bum LLC
         headshot: /src/assets/images/component-docs/profile.jpg
         headshot_alt: Headshot alt
-      - testimonial: Nice testimonial here...
+      - testimonial: >-
+          Ed always went the extra mile to lay a good foundation, then made suggestions
+          on how to improve or optimise the final product. Lorem ipsum dolor sit amet
+          more words to fill up the space and make things even.
         logo: /src/assets/images/component-docs/profile.jpg
         logo_alt: Logo alt
-        name: Client name
-        title: Position / Company
+        name: Benji Stark-Elster
+        title: CEO, Freak Athlete
         headshot: /src/assets/images/component-docs/profile.jpg
         headshot_alt: Headshot alt
     colorScheme: inherit

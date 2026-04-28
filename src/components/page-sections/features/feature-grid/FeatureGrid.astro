@@ -44,9 +44,8 @@ const {
     size="xl"
     alignX="center"
     data-prop="heading"
-  >
-    {heading}
-  </Heading>
+    text={heading}
+  />
   <Text
     class="feature-grid-subtext"
     alignX="center"
@@ -55,8 +54,8 @@ const {
   />
   <Grid
     gap="lg"
-    minItemWidth="360"
-    maxItemWidth="420"
+    minItemWidth={360}
+    maxItemWidth={420}
     class="feature-grid-grid"
     data-children-prop="features"
   >

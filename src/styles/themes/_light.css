@@ -10,6 +10,7 @@
   --color-text: var(--color-charcoal);
   --color-text-strong: var(--color-charcoal);
   --color-text-muted: var(--color-stone);
+  --color-text-eyebrow: var(--color-everygreen);
   --color-text-on-muted: var(--gray-12);
   --color-text-on-brand: var(--gray-0);
   --color-text-inverse: var(--gray-0);

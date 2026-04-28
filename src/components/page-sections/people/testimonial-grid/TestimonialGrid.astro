@@ -26,7 +26,7 @@ const {
   class:list={["testimonial-grid", className]}
   maxContentWidth="2xl"
   paddingHorizontal="md"
-  paddingVertical="md"
+  paddingVertical="3xl"
   colorScheme={colorScheme}
   backgroundColor={backgroundColor}
   useDefaultEditableBinding={useDefaultEditableBinding}
@@ -53,11 +53,12 @@ const {
     text={subtext}
   />
   <Grid
-    gap="lg"
+    gap="3xl"
     layout="center"
-    maxItemWidth={400}
+    maxItemWidth={360}
     minItemWidth={280}
     data-children-prop="testimonials"
+    class="testimonial-grid__grid"
   >
     {
       testimonials.map((testimonial: TestimonialProps) => (
@@ -74,7 +75,14 @@ const {
 <style>
   @layer page-sections {
     .testimonial-grid {
-     
+      .heading {
+        max-width: 50ch;
+        margin-inline: auto;
+      }
+      .testimonial-grid__grid {
+        margin-block-start: var(--spacing-2xl);
+        padding-inline: var(--spacing-xl);
+      }
     }
   }
 </style>
