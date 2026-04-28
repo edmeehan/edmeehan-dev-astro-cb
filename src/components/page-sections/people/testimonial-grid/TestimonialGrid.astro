@@ -1,0 +1,79 @@
+---
+import CustomSection from "@builders/custom-section/CustomSection.astro";
+import Heading from "@core-elements/heading/Heading.astro";
+import SimpleText from "@core-elements/simple-text/SimpleText.astro";
+import Text from "@core-elements/text/Text.astro";
+import TestimonialItem from "@page-sections/people/testimonial-grid/TestimonialItem.astro";
+import Grid from "@wrappers/grid/Grid.astro";
+
+type TestimonialProps = Record<string, unknown>;
+
+const {
+  eyebrow = "",
+  heading = "",
+  subtext = "",
+  testimonials = [],
+  colorScheme = "inherit",
+  backgroundColor,
+  class: className,
+  useDefaultEditableBinding = false,
+  _component,
+  ...htmlAttributes
+} = Astro.props;
+---
+
+<CustomSection
+  class:list={["testimonial-grid", className]}
+  maxContentWidth="2xl"
+  paddingHorizontal="md"
+  paddingVertical="md"
+  colorScheme={colorScheme}
+  backgroundColor={backgroundColor}
+  useDefaultEditableBinding={useDefaultEditableBinding}
+  {...htmlAttributes}
+>
+  <SimpleText
+    alignX="center"
+    class="eyebrow"
+    data-prop="eyebrow"
+    size="sm"
+    text={eyebrow}
+  />
+  <Heading
+    alignX="center"
+    data-prop="heading"
+    level="h2"
+    size="xl"
+    text={heading}
+  />
+  <Text
+    class="subtext"
+    alignX="center"
+    data-prop="subtext"
+    text={subtext}
+  />
+  <Grid
+    gap="lg"
+    layout="center"
+    maxItemWidth={400}
+    minItemWidth={280}
+  >
+    {
+      testimonials.map((testimonial: TestimonialProps) => (
+        <TestimonialItem
+          data-id="page-sections/people/testimonial-grid/testimonial-item"
+          data-editable="array-item"
+          {...testimonial}
+        />
+      ))
+    }
+  </Grid>
+</CustomSection>
+
+<style>
+  @layer page-sections {
+    .testimonial-grid {
+     
+    }
+  }
+</style>

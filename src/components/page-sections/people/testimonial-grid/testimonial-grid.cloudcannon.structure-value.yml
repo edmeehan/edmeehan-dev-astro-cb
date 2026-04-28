@@ -1,0 +1,92 @@
+label: Testimonial Grid
+icon: person
+description: Responsive grid layout for showcasing client testimonials.
+value:
+  _component: page-sections/people/testimonial-grid
+  eyebrow: Eyebrow text
+  heading: Heading text
+  subtext: Subtext text
+  testimonials: []
+  colorScheme: inherit
+  backgroundColor: base
+preview:
+  text:
+    - Testimonial Grid
+  subtext:
+    - key: heading
+  icon: person
+picker_preview:
+  text: Testimonial Grid
+  subtext: Grid of client testimonials with logo and headshot.
+_inputs_from_glob:
+  - /src/components/page-sections/people/testimonial-grid/testimonial-grid.cloudcannon.inputs.yml
+_structures:
+  testimonialGridItems:
+    values:
+      - label: Testimonial
+        icon: person
+        value:
+          testimonial: Nice testimonial here...
+          logo: /src/assets/images/component-docs/profile.jpg
+          logo_alt: Logo alt
+          name: Client name
+          title: Position / Company
+          headshot: /src/assets/images/component-docs/profile.jpg
+          headshot_alt: Headshot alt
+        preview:
+          text:
+            - key: name
+            - Client Testimonial
+          subtext:
+            - key: title
+            - Title / Company
+          image:
+            - key: headshot
+        _inputs:
+          testimonial:
+            type: markdown
+            comment: Client testimonial.
+            options:
+              blockquote: false
+              bold: true
+              format:
+              italic: true
+              link: true
+              strike: false
+              subscript: true
+              superscript: true
+              underline: false
+              bulletedlist: false
+              numberedlist: false
+          logo:
+            type: image
+            comment: The URL or path to the logo.
+            options:
+              paths:
+                uploads: src/assets/images
+                static: ''
+              resize_style: contain
+              width: 1920
+              height: 1280
+          logo_alt:
+            type: textarea
+            comment: Alternative text for accessibility.
+          name:
+            comment: The text content of the simple text (inline markdown only).
+            type: textarea
+          title:
+            comment: The text content of the simple text (inline markdown only).
+            type: textarea
+          headshot:
+            type: image
+            comment: The URL or path to the logo.
+            options:
+              paths:
+                uploads: src/assets/images
+                static: ''
+              resize_style: contain
+              width: 1920
+              height: 1280
+          headshot_alt:
+            type: textarea
+            comment: Alternative text for accessibility.

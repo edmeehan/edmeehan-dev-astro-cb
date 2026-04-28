@@ -1,0 +1,80 @@
+---
+import Image from "@core-elements/image/Image.astro";
+import SimpleText from "@core-elements/simple-text/SimpleText.astro";
+import Text from "@core-elements/text/Text.astro";
+import Card from "@wrappers/card/Card.astro";
+import GridItem from "@wrappers/grid/GridItem.astro";
+
+const {
+  testimonial = "",
+  logo = "",
+  logo_alt = "",
+  name = "",
+  title = "",
+  headshot = "",
+  headshot_alt = "",
+  class: className,
+  _component,
+  useDefaultEditableBinding: _useDefaultEditableBinding = false,
+  ...htmlAttributes
+} = Astro.props;
+---
+
+<GridItem
+  class="testimonial-item"
+  {...htmlAttributes}
+>
+  <Card
+    backgroundColor="none"
+    colorScheme="inherit"
+    paddingHorizontal="sm"
+    paddingVertical="sm"
+  >
+    <Text
+      alignX="start"
+      data-prop="testimonial"
+      text={testimonial}
+    />
+    <Image
+      alt={logo_alt}
+      aspectRatio="none"
+      data-prop="alt"
+      positionHorizontal="center"
+      positionVertical="center"
+      sizes="(max-width: 1280px) 100vw, 1280px"
+      slot="before"
+      source={logo}
+    />
+    <Fragment slot="after">
+      <SimpleText
+        alignX="start"
+        data-prop="name"
+        size="md"
+        text={name}
+      />
+      <SimpleText
+        alignX="start"
+        data-prop="title"
+        size="md"
+        text={title}
+      />
+      <Image
+        alt={headshot_alt}
+        aspectRatio="none"
+        data-prop="alt"
+        positionHorizontal="center"
+        positionVertical="center"
+        sizes="(max-width: 1280px) 100vw, 1280px"
+        source={headshot}
+      />
+    </Fragment>
+  </Card>
+</GridItem>
+
+<style>
+  @layer page-sections {
+    .testimonial-item {
+     
+    }
+  }
+</style>

@@ -1,0 +1,53 @@
+eyebrow:
+  comment: Optional eyebrow text shown above the heading.
+  type: text
+heading:
+  comment: Main heading for the testimonial grid.
+  type: textarea
+subtext:
+  type: markdown
+  comment: Supporting copy beneath the heading.
+  options:
+    blockquote: false
+    bold: true
+    format:
+    italic: true
+    link: true
+    strike: false
+    subscript: true
+    superscript: true
+    underline: false
+    bulletedlist: false
+    numberedlist: false
+testimonials:
+  type: array
+  label: Testimonials
+  comment: Feature cards rendered in the grid.
+  options:
+    structures: _structures.testimonialGridItems
+colorScheme:
+  type: select
+  comment: Color scheme theme applied to the section wrapper.
+  options:
+    values:
+      - id: inherit
+        name: Inherit
+      - id: light
+        name: Light
+      - id: dark
+        name: Dark
+backgroundColor:
+  type: select
+  comment: Background color used behind the grid.
+  options:
+    values:
+      - id: none
+        name: None
+      - id: base
+        name: Base
+      - id: surface
+        name: Surface
+      - id: accent
+        name: Accent
+      - id: highlight
+        name: Highlight
