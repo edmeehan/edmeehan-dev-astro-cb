@@ -3,6 +3,9 @@ post:
   type: select
   options:
     values: collections.blog
+    preview:
+      text:
+        - key: title
   comment: Select a blog post to feature in this section.
 colorScheme:
   type: select

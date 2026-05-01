@@ -132,7 +132,7 @@ pageSections:
     backgroundColor: highlight
     align: center
   - _component: page-sections/features/feature-article
-    post: /src/content/blog/2025-12-24-content-first-design.mdx
+    post: /src/content/blog/first-blog-post.mdx
     colorScheme: inherit
     backgroundColor: base
 ---
