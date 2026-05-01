@@ -1,0 +1,21 @@
+label: Mini Editorial
+icon: apps
+description: Body of text
+value:
+  _component: page-sections/info-blocks/mini-editorial
+  eyebrow: Eyebrow text
+  heading: Heading text
+  content: Content placeholder text that will be replaced with actual content.
+  colorScheme: inherit
+  backgroundColor: base
+preview:
+  text:
+    - Mini Editorial
+  subtext:
+    - key: heading
+  icon: apps
+picker_preview:
+  text: Mini Editorial
+  subtext: Body of text.
+_inputs_from_glob:
+  - /src/components/page-sections/info-blocks/mini-editorial/mini-editorial.cloudcannon.inputs.yml

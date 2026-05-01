@@ -113,6 +113,24 @@ pageSections:
     reverse: false
     colorScheme: inherit
     backgroundColor: surface
+  - _component: page-sections/info-blocks/mini-editorial
+    eyebrow:
+    heading: I keep my roster small so every project gets the attention it deserves.
+    content: >-
+      Are you doing $750K–$3M in annual revenue? Your store has issues — slow performance,
+      a migration you're scared to start, or a build that never got finished properly.
+      You've hired developers before and been let down. You're not looking for the
+      cheapest option. You're looking for someone reliable who acts like a teammate.
+
+
+
+      I keep my client roster intentionally small so I can stay accountable to every
+      project. That means I'm selective about who I work with. If you value clear
+      communication, fixed scope, and someone who shows up when things break, I just
+      might be your guy.
+    colorScheme: inherit
+    backgroundColor: highlight
+    align: center
   - _component: page-sections/features/feature-article
     post: /src/content/blog/2025-12-24-content-first-design.mdx
     colorScheme: inherit
