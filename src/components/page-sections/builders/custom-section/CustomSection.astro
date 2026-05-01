@@ -296,14 +296,15 @@ const arrayDataAttributes =
         }
 
         > .bg-accent {
-          background-color: var(--color-everygreen-light);
+          background-color: var(--color-bg-accent);
           & + :global(.content){
             --color-brand: var(--color-burnt-orange);
             --color-bg-brand: var(--color-burnt-orange);
             --color-bg-brand-muted: color-mix(in srgb, black 20%, var(--color-burnt-orange));
-            --color-text-strong: var(--color-sand);
+            --color-text-strong: var(--gray-0);
             --color-text-muted: var(--color-lime);
-            --color-text: var(--color-sand);
+            --color-text-eyebrow: var(--color-lime);
+            --color-text: var(--gray-0);
 
             :global(.card) {
               &:has(.bg-base) {
@@ -323,6 +324,7 @@ const arrayDataAttributes =
             --color-bg-brand-muted: color-mix(in srgb, black 20%, var(--color-burnt-orange));
             --color-text-strong: var(--color-everygreen);
             --color-text-muted: var(--color-everygreen-light);
+            --color-text-eyebrow: var(--color-everygreen-light);
             --color-text: var(--color-everygreen);
           }
         }
