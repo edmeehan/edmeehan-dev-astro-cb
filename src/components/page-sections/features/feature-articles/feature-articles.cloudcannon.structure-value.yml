@@ -3,7 +3,10 @@ icon: article
 description: Featured blog post section with image, title, description, and link.
 value:
   _component: page-sections/features/feature-article
-  post: ""
+  eyebrow: Eyebrow text
+  heading: Heading text
+  subtext: Subtext placeholder text that will be replaced with actual content.
+  posts: []
   colorScheme: inherit
   backgroundColor: base
 preview:

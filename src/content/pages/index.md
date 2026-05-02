@@ -131,8 +131,13 @@ pageSections:
     colorScheme: inherit
     backgroundColor: highlight
     align: center
-  - _component: page-sections/features/feature-article
-    post: /src/content/blog/first-blog-post.mdx
+  - _component: page-sections/features/feature-articles
+    eyebrow: Eyebrow text
+    heading: Heading text
+    subtext: Subtext placeholder text that will be replaced with actual content.
+    posts:
+      - /src/content/blog/first-blog-post.mdx
+      - /src/content/blog/first-blog-post.mdx
     colorScheme: inherit
     backgroundColor: base
 ---

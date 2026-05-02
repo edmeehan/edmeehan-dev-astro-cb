@@ -1,6 +1,27 @@
-post:
+eyebrow:
+  type: text
+  comment: Optional eyebrow text shown above the heading.
+heading:
+  type: text
+  comment: Main heading for the feature grid.
+subtext:
+  type: markdown
+  comment: Supporting copy beneath the heading.
+  options:
+    blockquote: false
+    bold: true
+    format:
+    italic: true
+    link: true
+    strike: false
+    subscript: true
+    superscript: true
+    underline: false
+    bulletedlist: false
+    numberedlist: false
+posts:
   # label: Project Post
-  type: select
+  type: multiselect
   options:
     values: collections.blog
     preview:

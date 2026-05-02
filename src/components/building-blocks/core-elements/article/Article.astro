@@ -1,0 +1,73 @@
+---
+import Card from "@components/building-blocks/wrappers/card/Card.astro";
+import Heading from "@core-elements/heading/Heading.astro";
+import Image from "@core-elements/image/Image.astro";
+import SimpleText from "@core-elements/simple-text/SimpleText.astro";
+
+const {
+  link = "",
+  image,
+  title = "",
+  description = "",
+  date,
+  
+  class: className,
+  _component,
+  ...htmlAttributes
+} = Astro.props;
+
+const pubDate = date?.toLocaleDateString("en-US", {
+  year: "numeric",
+  month: "long",
+  day: "numeric",
+});
+
+if (!_component && !title) return;
+---
+
+<Card
+  class:list={["article", className]}
+  link={link}
+  {...htmlAttributes}
+>
+  {image && (
+    <Image
+      class="image"
+      source={image.src}
+      alt={image.alt}
+      aspectRatio="square"
+      rounded={true}
+      slot="before"
+    />
+  )}
+
+  <SimpleText
+    size="sm"
+    class="meta"
+    text={pubDate}
+  />
+  <Heading
+    level="h3"
+    size="xs"
+    class="heading"
+    text={title}
+  />
+  {description && (
+    <SimpleText
+      class="description"
+      text={description}
+    />
+  )}
+</Card>
+
+<style>
+  @layer components {
+    .article {
+      :global(.card-inner) {
+        display: grid !important;
+        grid-template-columns: minmax(auto, 260px) minmax(70%, 1fr);
+        gap: var(--spacing-em-lg);
+      }
+    }
+  }
+</style>

@@ -1,0 +1,19 @@
+image:
+  type: image
+  comment: The article's featured image.
+imageAlt:
+  type: text
+  comment: Alt text for the featured image.
+  hidden: "!image"
+meta:
+  type: text
+  comment: Meta line displayed above the title, e.g. date and author.
+title:
+  type: text
+  comment: The article title.
+description:
+  type: textarea
+  comment: A short summary of the article.
+link:
+  type: url
+  comment: URL to the full article.

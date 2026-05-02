@@ -1,0 +1,22 @@
+label: Article
+icon: article
+description: Featured article card with image, meta, title, description, and link.
+value:
+  _component: building-blocks/core-elements/article
+  image: ""
+  imageAlt: ""
+  meta: ""
+  title: ""
+  description: ""
+  link: ""
+preview:
+  text:
+    - Article
+  subtext:
+    - key: title
+  icon: article
+picker_preview:
+  text: Article
+  subtext: Featured article card with image, meta, title, description, and link.
+_inputs_from_glob:
+  - /src/components/building-blocks/core-elements/article/article.cloudcannon.inputs.yml
