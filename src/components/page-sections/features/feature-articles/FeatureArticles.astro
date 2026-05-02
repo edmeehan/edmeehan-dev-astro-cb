@@ -68,7 +68,7 @@ const featured_posts = posts.map((postPath: string) => {
         data-id="building-blocks/core-elements/article/article"
         data-editable="array-item"
         link={`/blog/${post?.id}`}
-        {...post.data}
+        {...post?.data || {}}
       />
     ))}
     </div>
