@@ -1,8 +1,8 @@
-label: Feature Article
+label: Feature Articles
 icon: article
 description: Featured blog post section with image, title, description, and link.
 value:
-  _component: page-sections/features/feature-article
+  _component: page-sections/features/feature-articles
   eyebrow: Eyebrow text
   heading: Heading text
   subtext: Subtext placeholder text that will be replaced with actual content.
@@ -11,12 +11,12 @@ value:
   backgroundColor: base
 preview:
   text:
-    - Feature Article
+    - Feature Articles
   subtext:
     - key: post
   icon: article
 picker_preview:
-  text: Feature Article
+  text: Feature Articles
   subtext: Highlights a single blog post with image and summary.
 _inputs_from_glob:
-  - /src/components/page-sections/features/feature-article/feature-article.cloudcannon.inputs.yml
+  - /src/components/page-sections/features/feature-articles/feature-articles.cloudcannon.inputs.yml
