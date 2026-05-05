@@ -1,13 +1,3 @@
-logoSource:
-  type: image
-  comment: "Logo image source URL or path."
-  options:
-    resize_style: contain
-    width: 1920
-    height: 1280
-logoAlt:
-  type: text
-  comment: "Alt text for the logo image for accessibility."
 links:
   type: array
   comment: "Array of navigation links to display in the footer."

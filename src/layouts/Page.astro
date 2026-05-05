@@ -68,5 +68,5 @@ const sections = frontmatter?.pageSections ?? [];
     }
     <slot />
   </main>
-  <Footer {...footer} />
+  <Footer {...footer} logoText={mainNav.logoText} brandMessage={mainNav.brandMessage} />
 </Layout>

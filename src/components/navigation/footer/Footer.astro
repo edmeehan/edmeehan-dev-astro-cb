@@ -2,18 +2,17 @@
 import CustomSection from "@builders/custom-section/CustomSection.astro";
 import Bar from "@components/navigation/bar/Bar.astro";
 import Button from "@core-elements/button/Button.astro";
-import Divider from "@core-elements/divider/Divider.astro";
-import Image from "@core-elements/image/Image.astro";
 import Text from "@core-elements/text/Text.astro";
+import TypefaceLogo from "@core-elements/typeface-logo/TypefaceLogo.astro";
 import ButtonGroup from "@wrappers/button-group/ButtonGroup.astro";
 import type { SocialLink } from "../../../../types";
 
 const {
+  logoText,
+  brandMessage,
   links = [],
   socials = [] as SocialLink[],
   footerText = "",
-  logoSource,
-  logoAlt,
   useDefaultEditableBinding: _useDefaultEditableBinding = false,
   _component,
   ...htmlAttributes
@@ -29,15 +28,19 @@ const {
     paddingHorizontal="md"
     paddingVertical="2xl"
     useDefaultEditableBinding={false}
+    colorScheme="dark"
+    backgroundColor="base"
   >
+    
+
     <div class="footer-content">
       <div class="content-container">
-        <Image
-          source={logoSource}
-          alt={logoAlt}
-          class="footer-logo"
-          useDefaultEditableBinding={false}
-        />
+        <a href="/">
+          <TypefaceLogo
+            logoText={logoText}
+            brandMessage={brandMessage}
+          />
+        </a>
       </div>
       <div class="content-container">
         <Bar
@@ -46,8 +49,6 @@ const {
         />
       </div>
     </div>
-
-    <Divider />
 
     <div class="footer-content">
       <div class="content-container">

@@ -132,9 +132,9 @@ pageSections:
     backgroundColor: highlight
     align: center
   - _component: page-sections/features/feature-articles
-    eyebrow: Eyebrow text
-    heading: Heading text
-    subtext: Subtext placeholder text that will be replaced with actual content.
+    eyebrow: 
+    heading: Latest Insights
+    subtext: Guides and articles for Shopify store owners.
     posts:
       - /src/content/blog/first-blog-post.mdx
       - /src/content/blog/first-blog-post.mdx

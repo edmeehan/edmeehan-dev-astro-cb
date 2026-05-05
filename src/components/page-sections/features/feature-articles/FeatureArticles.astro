@@ -91,10 +91,17 @@ const featured_posts = posts.map((postPath: string) => {
 
     }
     .subtext {
-      
+      margin-top: var(--spacing-md);
     }
     .articles {
+      display: flex;
+      gap: var(--spacing-2xl);
+      flex-direction: column;
+      margin-top: var(--spacing-xl);
 
+      .card {
+        margin-top: 0;
+      }
     }
     .feature-articles-empty {
       color: var(--color-text-muted);
