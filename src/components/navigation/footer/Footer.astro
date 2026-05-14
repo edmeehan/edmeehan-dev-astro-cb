@@ -5,7 +5,7 @@ import Button from "@core-elements/button/Button.astro";
 import Text from "@core-elements/text/Text.astro";
 import TypefaceLogo from "@core-elements/typeface-logo/TypefaceLogo.astro";
 import ButtonGroup from "@wrappers/button-group/ButtonGroup.astro";
-import type { SocialLink } from "../../../../types";
+import type { SocialLink } from "src/types";
 
 const {
   logoText,
@@ -32,114 +32,134 @@ const {
     backgroundColor="base"
   >
     
-
-    <div class="footer-content">
-      <div class="content-container">
-        <a href="/">
-          <TypefaceLogo
-            logoText={logoText}
-            brandMessage={brandMessage}
-          />
-        </a>
-      </div>
-      <div class="content-container">
-        <Bar
-          navData={links}
-          useDefaultEditableBinding={false}
+    <div class="footer__brand">
+      <a href="/">
+        <TypefaceLogo
+          logoText={logoText}
+          brandMessage={brandMessage}
         />
-      </div>
+      </a>
     </div>
 
-    <div class="footer-content">
-      <div class="content-container">
-        <Text
-          class="footer-legal-text"
-          text={footerText || ""}
-          data-prop=""
-          useDefaultEditableBinding={false}
-        />
-      </div>
-      <div class="content-container">
-        <ButtonGroup
-          alignX="end"
-          useDefaultEditableBinding={false}
-        >
-          {
-            socials.map((social) => (
-              <Button
-                variant="ghost"
-                size="lg"
-                iconName={social.icon}
-                link={social.link}
-                hideText="true"
-                aria-label={social.label || `Visit our ${social.icon.replace(/^.*\//, "")} page`}
-                target="_blank"
-                rel="noopener noreferrer"
-                useDefaultEditableBinding={false}
-              />
-            ))
-          }
-        </ButtonGroup>
-      </div>
+    <div class="footer__text">
+      <Text
+        text={footerText || ""}
+        data-prop=""
+        useDefaultEditableBinding={false}
+      />
     </div>
+
+    <div class="footer__nav">
+      <Bar
+        navData={links}
+        useDefaultEditableBinding={false}
+      />
+    </div>
+
+    <div class="footer__links">
+      <ButtonGroup
+        direction="row"
+        useDefaultEditableBinding={false}
+      >
+        {
+          socials.map((social: SocialLink) => (
+            <Button
+              variant="ghost"
+              size="lg"
+              iconName={social.icon}
+              link={social.link}
+              hideText="true"
+              aria-label={social.label || `Visit our ${social.icon.replace(/^.*\//, "")} page`}
+              target="_blank"
+              rel="noopener noreferrer"
+              useDefaultEditableBinding={false}
+            />
+          ))
+        }
+      </ButtonGroup>
+    </div>
+
+    <div class="footer__legal">
+      &copy; {new Date().getFullYear()} All rights reserved.
+    </div>
+
   </CustomSection>
 </footer>
 
 <style>
+  @import "/src/styles/variables/_breakpoints.css";
+
   @layer page-sections {
     .footer {
-      container-type: inline-size;
-
-      :global(.button-group) {
-        &:global(.align-end) {
-          @container (max-width: 599px) {
-            justify-content: center;
-          }
+      .footer__links {
+        :global(.button-group) {
+          container-type: unset;
         }
       }
-
-      .footer-content {
-        @container (min-width: 600px) {
+      .footer__text {
+        :global(.text) {
+          margin-top: 0;
+        }
+      }
+      .footer__legal {
+        font-size: var(--font-size-xs);
+        opacity: 0.6;
+      }
+      :global(.outer-content > .content) {
+        display: flex;
+      }
+      @media (--bp-lg-down) {
+        .footer__text {
+          :global(.text) {
+            max-width: 50ch;
+          }
+          :global(.text-inner) {
+            text-align: center;
+          }
+        }
+        .footer__brand {
+          :global(.typeface-logo) {
+            align-items: center;
+          }
+        }
+        .footer__links {
+          :global(.button-group) {
+            margin-top: 0;
+          }
+        }
+        :global(.outer-content > .content) {
+          flex-direction: column;
           align-items: center;
-          display: flex;
-          flex-wrap: wrap;
-          justify-content: space-between;
-        }
-
-        .content-container {
-          flex: 1;
+          gap: var(--spacing-md)
         }
       }
 
-      :global(.footer-legal-text) {
-        color: var(--color-text-muted);
-        text-align: center;
-        @container (min-width: 600px) {
-          text-align: start;
+      @media (--bp-lg) {
+        .footer__legal {
+          flex: 1 0 100%;
+          text-align: center;
         }
-      }
-
-      :global(.footer-logo) {
-        flex-shrink: 0;
-        margin-top: 0 !important;
-
-        :global(img) {
-          margin-inline: auto;
-          margin-bottom: var(--spacing-md);
-          max-height: 2em;
-          max-width: min(20em, 100%);
-          width: auto;
-          @container (min-width: 600px) {
-            margin: 0;
+        .footer__text {
+          flex: 1 0 20%;
+          :global(.text) {
+            max-width: 30ch;
+          }
+          :global(.text-inner p:first-child) {
+            margin-top: 0;
+          }
+          :global(.text-inner p:last-child) {
+            margin-bottom: 0;
           }
         }
-      }
-
-      :global(.bar) :global(.bar-list) {
-        flex-flow: column wrap;
-        @container (min-width: 600px) {
+        .footer__links {
+          :global(.button-group) {
+            margin-top: var(--spacing-xs);
+          }
+        }
+        :global(.outer-content > .content) {
           flex-direction: row;
-          justify-content: end;
+          flex-wrap: wrap;
+          gap: var(--spacing-2xl);
         }
       }
     }

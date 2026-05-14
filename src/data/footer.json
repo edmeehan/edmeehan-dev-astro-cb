@@ -16,16 +16,16 @@
   "socials": [
     {
       "icon": "social/github",
-      "link": "https://github.com"
-    },
-    {
-      "icon": "social/x",
-      "link": "https://twitter.com"
+      "link": "https://github.com/edmeehan"
     },
     {
       "icon": "social/linkedin",
-      "link": "https://linkedin.com"
+      "link": "https://www.linkedin.com/in/edwardmeehan"
+    },
+    {
+      "icon": "social/linkedin",
+      "link": "https://throwshaka.com"
     }
   ],
-  "footerText": "© 2026 All rights reserved."
+  "footerText": "I specialize in custom Shopify builds for brands that take their digital presence seriously."
 }
