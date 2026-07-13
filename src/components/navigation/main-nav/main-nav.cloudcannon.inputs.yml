@@ -4,6 +4,9 @@ logoText:
 brandMessage:
   type: text
   comment: "Secondary brand message displayed alongside the logo text."
+themeToggle:
+  type: checkbox
+  comment: "Show a dark/light mode toggle button in the navigation bar."
 navData:
   type: array
   comment: "Array of navigation items to render in the navigation bar."

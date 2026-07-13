@@ -1,6 +1,7 @@
 {
   "logoText": "Ed Meehan",
   "brandMessage": "Developer / Partner",
+  "themeToggle": true,
   "navData": [
     {
       "name": "Home",

@@ -3,6 +3,8 @@
  *
  * - Used by `astro.config.mjs` (`fonts`) and layout `<SiteFonts />` (preload / Font component).
  * - `cssVariable` values must match tokens consumed in CSS (`--font-body`, `--font-headings`).
+ * - Prefer `fontProviders.fontsource()` (local via @fontsource packages) over remote providers.
+ * - Use a weight range string (e.g. `"100 900"`) for variable fonts instead of discrete weights.
  *
  * @see https://docs.astro.build/en/guides/fonts/
  */
@@ -15,7 +17,8 @@ export const siteFonts = [
     provider: fontProviders.google(),
     weights: [400, 600, 700],
     styles: ["normal"],
-    fallbacks: ["sans-serif"]
+    fallbacks: ["sans-serif"],
+    subsets: ["latin"],
   },
   {
     name: "Instrument Sans",
@@ -23,7 +26,8 @@ export const siteFonts = [
     provider: fontProviders.google(),
     weights: [400],
     styles: ["italic"],
-    fallbacks: ["sans-serif"]
+    fallbacks: ["sans-serif"],
+    subsets: ["latin"],
   },
   {
     name: "Young Serif",
@@ -31,6 +35,7 @@ export const siteFonts = [
     provider: fontProviders.google(),
     weights: [400],
     styles: ["normal"],
-    fallbacks: ["serif"]
+    fallbacks: ["serif"],
+    subsets: ["latin"],
   },
 ];

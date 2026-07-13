@@ -13,8 +13,14 @@ const {
   heading = "",
   subtext = "",
   features = [],
+  sectionLabel,
+  maxContentWidth = "2xl",
+  paddingHorizontal = "md",
+  paddingVertical = "3xl",
   colorScheme = "inherit",
   backgroundColor,
+  background,
+  alignmentHorizontal = "center",
   class: className,
   useDefaultEditableBinding = false,
   _component,
@@ -24,16 +30,18 @@ const {
 
 <CustomSection
   class:list={["feature-grid", className]}
-  maxContentWidth="2xl"
-  paddingHorizontal="md"
-  paddingVertical="3xl"
+  label={sectionLabel}
+  maxContentWidth={maxContentWidth}
+  paddingHorizontal={paddingHorizontal}
+  paddingVertical={paddingVertical}
   colorScheme={colorScheme}
   backgroundColor={backgroundColor}
+  background={background}
   useDefaultEditableBinding={useDefaultEditableBinding}
   {...htmlAttributes}
 >
   <SimpleText
-    alignX="center"
+    alignmentHorizontal={alignmentHorizontal}
     class="eyebrow"
     size="sm"
     data-prop="eyebrow"
@@ -42,13 +50,13 @@ const {
   <Heading
     level="h2"
     size="xl"
-    alignX="center"
+    alignmentHorizontal={alignmentHorizontal}
     data-prop="heading"
     text={heading}
   />
   <Text
     class="feature-grid-subtext"
-    alignX="center"
+    alignmentHorizontal={alignmentHorizontal}
     data-prop="subtext"
     text={subtext}
   />
@@ -71,13 +79,13 @@ const {
   </Grid>
 </CustomSection>
 
-<style>
+<style is:global>
   @import "/src/styles/variables/_breakpoints.css";
 
   @layer page-sections {
     @media (--bp-md-down) {
       .feature-grid {
-        :global(> .outer-content > .content) {
+        > .outer-content > .content {
           padding-block-start: var(--spacing-3xl);
         }
       }
@@ -92,7 +100,7 @@ const {
           max-width: 50ch;
           margin-inline: auto;
         }
-        :global(> .outer-content > .content) {
+        > .outer-content > .content {
           padding-inline: var(--spacing-lg);
         }
       }

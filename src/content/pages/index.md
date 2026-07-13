@@ -70,7 +70,7 @@ pageSections:
     gap: xl
     minItemWidth: 280
     maxItemWidth: 360
-    align: center
+    alignmentHorizontal: center
   - _component: page-sections/people/testimonial-grid
     eyebrow: Testimonials
     heading: What it actually feels like to work with someone who gives a damn.

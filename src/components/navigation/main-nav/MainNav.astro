@@ -2,11 +2,14 @@
 import CustomSection from "@builders/custom-section/CustomSection.astro";
 import Bar from "@components/navigation/bar/Bar.astro";
 import Mobile from "@components/navigation/mobile/Mobile.astro";
+import ThemeToggle from "@components/navigation/theme-toggle/ThemeToggle.astro";
 import TypefaceLogo from "@core-elements/typeface-logo/TypefaceLogo.astro";
 import ButtonGroup from "@wrappers/button-group/ButtonGroup.astro";
 
 type NavButton = {
   text?: string;
+  /** Button schema uses `link`; legacy entries may use `href`. */
+  link?: string;
   href?: string;
   [key: string]: unknown;
 };
@@ -16,6 +19,7 @@ const {
   brandMessage,
   navData = [],
   buttonSections = [] as NavButton[],
+  themeToggle = false,
   class: className,
   useDefaultEditableBinding: _useDefaultEditableBinding = false,
   _component,
@@ -26,7 +30,7 @@ const mobileNavData = [
   ...navData,
   ...buttonSections.map((button: NavButton) => ({
     name: button.text || "Button",
-    path: button.href || "#",
+    path: button.link || button.href || "#",
     children: [],
   })),
 ];
@@ -53,6 +57,7 @@ const mobileNavData = [
       class="desktop-main-nav"
     />
 
+    {themeToggle && <ThemeToggle />}
     <ButtonGroup
       direction="row"
       align="center"
@@ -130,6 +135,7 @@ const mobileNavData = [
         align-items: center;
         display: flex;
         flex-shrink: 0;
+        gap: var(--spacing-md);
         justify-content: flex-end;
         margin-left: auto;
         transition: all var(--animation-slow) ease;
